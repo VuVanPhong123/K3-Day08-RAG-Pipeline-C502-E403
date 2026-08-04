@@ -1,6 +1,18 @@
 # University Admission RAG Assistant
 
 Trợ lý AI tra cứu điểm chuẩn và đề án tuyển sinh đại học. Hệ thống hỗ trợ học sinh THPT và phụ huynh tra cứu, so sánh và tổng hợp thông tin tuyển sinh từ nguồn chính thức như đề án tuyển sinh, thông báo điểm chuẩn, học phí, học bổng, chỉ tiêu và phương thức xét tuyển.
+## Thành viên và phân công
+
+| Thành viên | MSSV | Vai trò | Phạm vi phụ trách | Trạng thái |
+|---|---|---|---|---|
+| **Vũ Văn Phong** | **2A202601647** | **Team Leader & RAG Architect** | Thiết kế kiến trúc; Task 9 hybrid retrieval; tích hợp FastAPI; code review; điều phối A/B evaluation; tổng hợp báo cáo và demo | Hoàn thành |
+| Đoàn Nhật Nam | 2A202601123 | Data Engineering & Scraping Developer | Task 1–2; thu thập PDF và crawl nguồn chính thức; provenance; phát hiện trang listing/document pointer; kiểm tra data hygiene | Hoàn thành |
+| Hà Duy Anh | 2A202601511 | Data Standardization & Vector DB Developer | Task 3–4; chuẩn hóa Markdown; chunking; metadata; ChromaDB; fingerprint và rebuild index; kiểm tra evidence của golden dataset | Hoàn thành |
+| Nguyễn Quang Vinh | 2A202601517 | Dense & Sparse Retrieval Developer | Task 5–6; semantic search; BM25/TF-IDF; retrieval smoke test; hỗ trợ benchmark hybrid và dense-only | Hoàn thành |
+| Hoàng Lê Minh | 2A202601653 | Reranking & Fallback Developer | Task 7–8; RRF/Jina reranking; PageIndex API; local structural fallback; registry/retry và fallback test | Hoàn thành |
+| Phạm Sỹ Đức | 2A202601601 | Generation & Frontend Developer | Task 10; generation có citation; quality gate; conversation memory; Streamlit và React UI; hiển thị source/evidence | Hoàn thành |
+
+Phân công được chia theo sáu khối độc lập của pipeline. Nhóm trưởng đảm nhiệm tích hợp và kiểm soát chất lượng thay vì gom thêm toàn bộ phần triển khai của một thành viên khác.
 
 ## Phạm Vi Dữ Liệu
 
