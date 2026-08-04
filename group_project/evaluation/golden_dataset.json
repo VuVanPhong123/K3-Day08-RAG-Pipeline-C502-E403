@@ -1,17 +1,102 @@
 [
   {
-    "question": "Học phí hàng năm của chương trình Business tại RMIT Vietnam là bao nhiêu?",
-    "expected_answer": "Khoảng 375.840.000 VND mỗi năm (tùy chương trình cụ thể).",
-    "expected_context": "Trang Tuition Fees, mục Undergraduate Programs"
+    "question": "VinUni (VinUniversity) có công bố điểm chuẩn (cutoff score) cố định theo ngành như các trường đại học khác không?",
+    "expected_answer": "Không — VinUniversity không xét tuyển theo điểm chuẩn cố định. Trường đánh giá toàn diện hồ sơ ứng viên qua nhiều tiêu chí (không chỉ điểm số) kết hợp phỏng vấn, thay vì công bố một mức điểm sàn/điểm chuẩn theo ngành.",
+    "expected_context": "VinUniversity Admissions — admissions.vinuni.edu.vn, mục Application Process"
   },
   {
-    "question": "Học phí được thanh toán theo hình thức nào?",
-    "expected_answer": "Thanh toán theo từng học kỳ, tính theo từng môn học đã đăng ký.",
-    "expected_context": "Trang Tuition Fees, mục Payment Structure"
+    "question": "Hồ sơ ứng viên VinUni được xét duyệt qua những vòng nào?",
+    "expected_answer": "Hồ sơ trải qua bước sàng lọc sơ bộ (pre-screening) và 2 vòng đánh giá bởi giảng viên/chuyên gia tuyển sinh; hồ sơ không đạt điều kiện tối thiểu bị loại ngay ở vòng sàng lọc. Ứng viên qua vòng đánh giá được mời phỏng vấn từ xa, gồm phỏng vấn cá nhân và bài tập tình huống (scenario-based challenge).",
+    "expected_context": "VinUniversity Admissions — admissions.vinuni.edu.vn, mục Application Process"
   },
   {
-    "question": "Trường có cung cấp ký túc xá trong khuôn viên không?",
-    "expected_answer": "Không — trường không cung cấp chỗ ở trong khuôn viên, nhưng có đội ngũ hỗ trợ sinh viên tìm chỗ ở gần trường.",
-    "expected_context": "Trang Accommodation Services"
+    "question": "VinUni xét duyệt hồ sơ tuyển sinh theo đợt cố định hay xét liên tục?",
+    "expected_answer": "VinUni xét duyệt hồ sơ theo hình thức cuốn chiếu (rolling admission) — hồ sơ được rà soát vào ngày 15 hàng tháng, thay vì chỉ xét dồn vào cuối mỗi đợt tuyển sinh như trước.",
+    "expected_context": "VinUniversity Admissions — admissions.vinuni.edu.vn, mục Application Process"
+  },
+  {
+    "question": "Học phí ngành Điều dưỡng (Nursing) tại VinUni năm học 2026 là bao nhiêu?",
+    "expected_answer": "Khoảng 349.650.000 VND/năm.",
+    "expected_context": "VinUniversity — admissions.vinuni.edu.vn, mục Tuition Fee and Financial Support"
+  },
+  {
+    "question": "Học phí các chương trình cử nhân Kinh doanh, Kỹ thuật/Công nghệ và ngành Bác sĩ Y khoa tại VinUni năm học 2026 là bao nhiêu?",
+    "expected_answer": "Khoảng 815.850.000 VND/năm, áp dụng chung cho các chương trình cử nhân Kinh doanh, Kỹ thuật - Công nghệ, và chương trình Bác sĩ Y khoa (Doctor of Medicine).",
+    "expected_context": "VinUniversity — admissions.vinuni.edu.vn, mục Tuition Fee and Financial Support"
+  },
+  {
+    "question": "Sinh viên nhập học khóa 2026-2027 tại VinUni được hưởng ưu đãi học phí gì?",
+    "expected_answer": "Được giảm 35% trên mức học phí niêm yết, áp dụng cho toàn bộ thời gian học tại trường (không chỉ năm đầu).",
+    "expected_context": "VinUniversity — admissions.vinuni.edu.vn, mục Tuition Fee and Financial Support"
+  },
+  {
+    "question": "Điểm chuẩn năm 2025 của Đại học Bách khoa Hà Nội (HUST) dao động trong khoảng nào?",
+    "expected_answer": "Điểm chuẩn năm 2025 (phương thức xét điểm thi tốt nghiệp THPT, thang 30) của HUST dao động từ 19,00 đến 29,39 điểm, áp dụng cho 65 chương trình đào tạo.",
+    "expected_context": "HUST — hust.edu.vn, thông báo điểm chuẩn xét tuyển đại học 2025"
+  },
+  {
+    "question": "Ngành nào có điểm chuẩn cao nhất tại HUST năm 2025, và điểm là bao nhiêu?",
+    "expected_answer": "Chương trình tiên tiến Khoa học Dữ liệu và Trí tuệ nhân tạo (mã IT-E10) có điểm chuẩn cao nhất là 29,39 điểm.",
+    "expected_context": "HUST — hust.edu.vn, thông báo điểm chuẩn xét tuyển đại học 2025"
+  },
+  {
+    "question": "Điểm chuẩn ngành Khoa học Máy tính (IT1) tại HUST năm 2025 là bao nhiêu?",
+    "expected_answer": "29,19 điểm.",
+    "expected_context": "HUST — hust.edu.vn, thông báo điểm chuẩn xét tuyển đại học 2025"
+  },
+  {
+    "question": "Chương trình nào có điểm chuẩn thấp nhất tại HUST năm 2025?",
+    "expected_answer": "Chương trình TROY-BA có điểm chuẩn thấp nhất, ở mức 19,00 điểm.",
+    "expected_context": "HUST — hust.edu.vn, thông báo điểm chuẩn xét tuyển đại học 2025"
+  },
+  {
+    "question": "HUST tính điểm xét tuyển như thế nào đối với các chương trình có môn thi chính (hệ số)?",
+    "expected_answer": "Với chương trình có môn chính, điểm xét tuyển được tính theo công thức (Môn 1 + Môn 2 + Môn 3 + Môn chính) × 3/4, khác với công thức chuẩn là tổng điểm 3 môn cộng điểm ưu tiên.",
+    "expected_context": "HUST — hust.edu.vn, thông báo điểm chuẩn xét tuyển đại học 2025, mục Cách tính điểm xét tuyển"
+  },
+  {
+    "question": "Tổ hợp môn kỹ thuật (A00, A01, A02, B00, D07...) có được ưu tiên gì khi cạnh tranh cùng một ngành với tổ hợp kinh tế/sư phạm (D01, D04) tại HUST không?",
+    "expected_answer": "Có — các tổ hợp kỹ thuật được cộng thêm 0,5 điểm khi xét tuyển cùng ngành với các tổ hợp kinh tế/sư phạm như D01, D04.",
+    "expected_context": "HUST — hust.edu.vn, thông báo điểm chuẩn xét tuyển đại học 2025, mục Điều chỉnh tổ hợp môn"
+  },
+  {
+    "question": "Học phí các chương trình chuẩn, chương trình đặc thù và chương trình hợp tác quốc tế tại HUST năm học 2025-2026 là bao nhiêu?",
+    "expected_answer": "Chương trình chuẩn: 14-17,5 triệu VND/kỳ. Chương trình đặc thù: 17,5-22,5 triệu VND/kỳ. Chương trình hợp tác quốc tế: 25,5-30 triệu VND/kỳ.",
+    "expected_context": "HUST — hust.edu.vn, thông báo điểm chuẩn xét tuyển đại học 2025, mục Học phí"
+  },
+  {
+    "question": "Trường Đại học Khoa học Tự nhiên (HUS), ĐHQGHN có bao nhiêu phương thức xét tuyển và gồm những gì?",
+    "expected_answer": "HUS xét tuyển theo 5 phương thức: Phương thức 100 (điểm thi tốt nghiệp THPT), Phương thức 401 (bài thi đánh giá năng lực HSA của ĐHQGHN), Phương thức 415 (chứng chỉ SAT quốc tế), Phương thức 409 (kết hợp điểm thi THPT với chứng chỉ ngoại ngữ quốc tế), và Phương thức 500 (các phương thức khác).",
+    "expected_context": "HUS — hus.vnu.edu.vn, thông báo điểm chuẩn trúng tuyển đại học chính quy 2025"
+  },
+  {
+    "question": "Điểm chuẩn ngành Khoa học Dữ liệu tại HUS năm 2025 là bao nhiêu?",
+    "expected_answer": "26,00 điểm — đây là ngành có điểm chuẩn cao nhất tại HUS năm 2025 (phương thức xét điểm thi THPT, thang 30).",
+    "expected_context": "HUS — hus.vnu.edu.vn, thông báo điểm chuẩn trúng tuyển đại học chính quy 2025"
+  },
+  {
+    "question": "Điểm chuẩn ngành Toán học tại HUS năm 2025 là bao nhiêu?",
+    "expected_answer": "25,9 điểm.",
+    "expected_context": "HUS — hus.vnu.edu.vn, thông báo điểm chuẩn trúng tuyển đại học chính quy 2025"
+  },
+  {
+    "question": "Ngành nào có điểm chuẩn thấp nhất tại HUS năm 2025?",
+    "expected_answer": "Ngành Sinh học có điểm chuẩn thấp nhất, ở mức 20,05 điểm; theo sát là ngành Công nghệ Sinh dược với 20,1 điểm.",
+    "expected_context": "HUS — hus.vnu.edu.vn, thông báo điểm chuẩn trúng tuyển đại học chính quy 2025"
+  },
+  {
+    "question": "HUS bắt đầu quy đổi và công bố điểm chuẩn theo thang điểm 30 từ năm nào?",
+    "expected_answer": "Từ năm 2025, HUS quy đổi và công bố điểm chuẩn theo thang điểm 30 để thuận tiện so sánh với các trường đại học khác.",
+    "expected_context": "HUS — hus.vnu.edu.vn, thông báo điểm chuẩn trúng tuyển đại học chính quy 2025"
+  },
+  {
+    "question": "So sánh điểm chuẩn ngành liên quan đến Khoa học Dữ liệu giữa HUST và HUS năm 2025, trường nào cao hơn?",
+    "expected_answer": "HUST cao hơn: chương trình Khoa học Dữ liệu và Trí tuệ nhân tạo (IT-E10) của HUST lấy 29,39 điểm, trong khi ngành Khoa học Dữ liệu của HUS lấy 26,00 điểm — chênh lệch khoảng 3,39 điểm.",
+    "expected_context": "Tổng hợp từ hust.edu.vn (thông báo điểm chuẩn 2025) và hus.vnu.edu.vn (thông báo điểm chuẩn 2025)"
+  },
+  {
+    "question": "Trong 3 trường VinUni, HUST và HUS, trường nào không xét tuyển dựa trên điểm chuẩn cố định theo ngành?",
+    "expected_answer": "VinUni là trường duy nhất trong 3 trường không công bố điểm chuẩn cố định theo ngành — thay vào đó xét tuyển toàn diện qua hồ sơ và phỏng vấn. HUST và HUS đều công bố điểm chuẩn cụ thể theo từng ngành/chương trình dựa trên điểm thi tốt nghiệp THPT.",
+    "expected_context": "Tổng hợp từ admissions.vinuni.edu.vn, hust.edu.vn và hus.vnu.edu.vn"
   }
 ]
