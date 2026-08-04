@@ -27,3 +27,5 @@ group_project/evaluation/eval_cache.json
 # OS
 .DS_Store
 Thumbs.db
+
+AGENTS.md
