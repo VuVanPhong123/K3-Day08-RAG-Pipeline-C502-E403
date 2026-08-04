@@ -32,6 +32,32 @@ Quy tắc bắt buộc:
 
 Trả lời bằng tiếng Việt, ngắn gọn, có cấu trúc rõ ràng."""
 
+STOPWORDS = {
+    "là",
+    "gì",
+    "vào",
+    "tại",
+    "của",
+    "có",
+    "những",
+    "nào",
+    "bao",
+    "nhiêu",
+    "năm",
+    "thì",
+    "sao",
+    "còn",
+    "cho",
+    "và",
+    "theo",
+    "như",
+    "thế",
+}
+
+
+def _meaningful_tokens(text: str) -> set[str]:
+    return {token for token in tokenize(text) if len(token) >= 2 and token not in STOPWORDS}
+
 
 def reorder_for_llm(chunks: list[dict]) -> list[dict]:
     front = list(chunks[::2])
@@ -74,17 +100,108 @@ def _contextualize_query(query: str, history: list[dict] | None) -> str:
     if not history:
         return query
     lower = query.lower()
-    if any(marker in lower for marker in ["còn ", "thì sao", "so với", "vậy ", "sat", "ielts"]):
-        previous_user = [m.get("content", "") for m in history if m.get("role") == "user"]
+    if any(marker in lower for marker in ["còn ", "thì sao", "so với", "vậy ", "sat", "ielts", "năm 2025"]):
+        previous_user: list[str] = []
+        for message in history:
+            if message.get("role") != "user":
+                continue
+            content = str(message.get("content", "")).strip()
+            if content and content != query:
+                previous_user.append(content)
         if previous_user:
             return f"{previous_user[-1]}\nCâu hỏi tiếp theo: {query}"
     return query
 
 
+def _is_out_of_domain(query: str) -> bool:
+    lower = query.lower()
+    out_markers = [
+        "bitcoin",
+        "world cup",
+        "chữa bệnh",
+        "đau đầu",
+        "giá vàng",
+        "chứng khoán",
+        "thời tiết",
+        "xổ số",
+    ]
+    domain_markers = [
+        "tuyển sinh",
+        "điểm chuẩn",
+        "học phí",
+        "học bổng",
+        "chỉ tiêu",
+        "ielts",
+        "sat",
+        "hust",
+        "rmit",
+        "vinuni",
+        "hcmus",
+        "bách khoa",
+        "khoa học tự nhiên",
+        "đăng ký",
+        "hồ sơ",
+    ]
+    return any(marker in lower for marker in out_markers) and not any(marker in lower for marker in domain_markers)
+
+
+def _evidence_overlap(query: str, chunks: list[dict]) -> float:
+    expanded = query
+    synonyms = {
+        "học bổng": "scholarship scholarships financial aid merit based",
+        "học phí": "tuition fee fees",
+        "hồ sơ": "documents supporting documents application",
+        "giấy tờ": "documents supporting documents",
+        "đăng ký": "apply application submit",
+        "chỉ tiêu": "quota target seats",
+        "điểm chuẩn": "admission score cutoff",
+        "ngoại ngữ": "english language ielts toefl",
+    }
+    lower = query.lower()
+    for marker, extra in synonyms.items():
+        if marker in lower:
+            expanded = f"{expanded} {extra}"
+    if "vinuni" in lower:
+        expanded = f"{expanded} vinuniversity"
+    if "rmit" in lower:
+        expanded = f"{expanded} university vietnam"
+    q_tokens = _meaningful_tokens(expanded)
+    if not q_tokens or not chunks:
+        return 0.0
+    evidence_tokens = _meaningful_tokens(" ".join(chunk.get("content", "") for chunk in chunks[:3]))
+    return len(q_tokens & evidence_tokens) / max(1, len(q_tokens))
+
+
+def _asked_years(query: str) -> set[str]:
+    return set(re.findall(r"\b20\d{2}\b", query))
+
+
+def _quality_gate(query: str, chunks: list[dict]) -> str | None:
+    if _is_out_of_domain(query):
+        return "out_of_domain"
+    if not chunks:
+        return "no_chunks"
+    best_score = max(float(chunk.get("score", 0.0)) for chunk in chunks)
+    threshold = float(chunks[0].get("metadata", {}).get("score_threshold", 0.0) or 0.0)
+    if threshold and best_score < threshold:
+        return "low_dense_score"
+    if _evidence_overlap(query, chunks) < 0.12:
+        return "low_evidence_overlap"
+    years = _asked_years(query)
+    if years:
+        evidence_years = {
+            str((chunk.get("metadata", {}) or {}).get("admission_year", (chunk.get("metadata", {}) or {}).get("year", "")))
+            for chunk in chunks
+        }
+        if evidence_years and not (years & evidence_years):
+            return "year_mismatch"
+    return None
+
+
 def _local_extractive_answer(query: str, chunks: list[dict]) -> str:
     if not chunks:
         return "I cannot verify this information"
-    q_tokens = set(tokenize(query))
+    q_tokens = _meaningful_tokens(query)
     evidence: list[tuple[float, dict, str]] = []
     for chunk in chunks:
         text = chunk.get("content", "")
@@ -95,15 +212,16 @@ def _local_extractive_answer(query: str, chunks: list[dict]) -> str:
             sentence = re.sub(r"\s+", " ", sentence).strip()
             if len(sentence) < 40:
                 continue
-            tokens = set(tokenize(sentence))
+            tokens = _meaningful_tokens(sentence)
             score = len(q_tokens & tokens) / max(1, len(q_tokens))
             if score > best_score:
                 best_sentence = sentence
                 best_score = score
-        if not best_sentence:
+        if not best_sentence and float(chunk.get("score", 0.0)) >= 0.2:
             best_sentence = first_sentences(text, 320)
             best_score = float(chunk.get("score", 0.0))
-        evidence.append((best_score, chunk, best_sentence))
+        if best_score >= 0.18:
+            evidence.append((best_score, chunk, best_sentence))
 
     evidence.sort(key=lambda item: item[0], reverse=True)
     selected = [row for row in evidence[:3] if row[2]]
@@ -125,6 +243,26 @@ def _has_valid_citation(answer: str, chunks: list[dict]) -> bool:
     return bool(used) and all(label in labels for label in used)
 
 
+def _is_modern_gemini_model(model: str) -> bool:
+    model = model.lower()
+    return bool(re.search(r"gemini-(3\.[5-9]|[4-9]\.)", model))
+
+
+def _provider_error_message(provider: str, exc: Exception) -> str:
+    status = getattr(exc, "status_code", None) or getattr(exc, "code", None)
+    response = getattr(exc, "response", None)
+    if status is None and response is not None:
+        status = getattr(response, "status_code", None)
+    text = str(exc).lower()
+    if status == 400 or "400" in text:
+        return f"{provider} bad request; falling back locally"
+    if status == 429 or "429" in text or "quota" in text or "rate" in text:
+        return f"{provider} quota or rate limit reached; falling back locally"
+    if "api_key" in text or "api key" in text or "unauthorized" in text or "forbidden" in text:
+        return f"{provider} authentication unavailable; falling back locally"
+    return f"{provider} unavailable; falling back locally"
+
+
 def _generate_gemini(prompt: str) -> dict[str, str]:
     api_key = os.getenv("GEMINI_API_KEY", "")
     if not api_key:
@@ -133,16 +271,18 @@ def _generate_gemini(prompt: str) -> dict[str, str]:
     from google.genai import types
 
     client = genai.Client(api_key=api_key)
+    config_kwargs = {
+        "system_instruction": SYSTEM_PROMPT,
+        "max_output_tokens": 900,
+        "http_options": types.HttpOptions(timeout=30000),
+    }
+    if not _is_modern_gemini_model(GEMINI_MODEL):
+        config_kwargs["temperature"] = TEMPERATURE
+        config_kwargs["top_p"] = TOP_P
     response = client.models.generate_content(
         model=GEMINI_MODEL,
         contents=prompt,
-        config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_PROMPT,
-            temperature=TEMPERATURE,
-            top_p=TOP_P,
-            max_output_tokens=900,
-            http_options=types.HttpOptions(timeout=30000),
-        ),
+        config=types.GenerateContentConfig(**config_kwargs),
     )
     return {"answer": response.text or "", "provider": "gemini", "model": GEMINI_MODEL}
 
@@ -175,6 +315,15 @@ def generate_with_citation(
     retrieval_options = retrieval_options or {}
     contextual_query = _contextualize_query(query, history)
     chunks = retrieve(contextual_query, top_k=top_k, **retrieval_options)
+    gate_reason = _quality_gate(contextual_query, chunks)
+    if gate_reason:
+        return {
+            "answer": "I cannot verify this information\n\nTôi chưa tìm thấy tài liệu đủ rõ trong corpus hiện tại. Vui lòng kiểm tra nguồn tuyển sinh chính thức của trường.",
+            "sources": [],
+            "retrieval_source": "none",
+            "provider": "quality_gate",
+            "model": gate_reason,
+        }
     reordered = reorder_for_llm(chunks)
     context = format_context(reordered)
     prompt = f"Context:\n{context}\n\nQuestion: {contextual_query}\n\nAnswer with citations from the provided citation labels only."
@@ -193,7 +342,8 @@ def generate_with_citation(
                         "model": result["model"],
                     }
             except Exception as exc:
-                print(f"WARNING: generation provider fallback: {exc}")
+                provider = "gemini" if generator is _generate_gemini else "openai"
+                print(f"WARNING: {_provider_error_message(provider, exc)}")
 
     answer = _local_extractive_answer(contextual_query, reordered)
     return {

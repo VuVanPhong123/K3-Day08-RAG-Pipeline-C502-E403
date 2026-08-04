@@ -1,0 +1,47 @@
+{
+  "url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees",
+  "title": "Học phí RMIT Việt Nam",
+  "institution": "RMIT Việt Nam",
+  "category": "tuition_fee",
+  "sub_category": "tuition_table",
+  "admission_year": 2026,
+  "date_crawled": "2026-08-04T12:38:07+07:00",
+  "language": "vi",
+  "source_domain": "www.rmit.edu.vn",
+  "page_type": "table_page",
+  "detected_page_type": "detail_page",
+  "is_primary_evidence": true,
+  "parent_url": "",
+  "discovered_from": "",
+  "child_sources": [
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students",
+      "anchor_text": "arrow icon Important dates for students",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/phd-programs/phd-entry-requirements",
+      "anchor_text": "Entry requirements",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students/higher-education",
+      "anchor_text": "Higher education important dates",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students/pathways",
+      "anchor_text": "Pathway programs important dates",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees"
+    }
+  ],
+  "crawl_stats": {
+    "visible_text_characters": 10735,
+    "link_count": 348,
+    "heading_count": 70,
+    "table_count": 9,
+    "table_rows": 91
+  },
+  "content_markdown": "- Tuition fees\n\n- Important dates for students\n\n- Life on campus Sports and social clubs Support services Life and work opportunities\n\n- Life on campus\n\n- Sports and social clubs\n\n- Support services\n\n- Life and work opportunities\n\n- Why choose RMIT Vietnam RMIT Parents and Family Work at RMIT Schools and Centres Who we are Vietnam Country Commitment Locations and Campuses News Events\n\n- Why choose RMIT Vietnam\n\n- RMIT Parents and Family\n\n- Work at RMIT\n\n- Schools and Centres\n\n- Vietnam Country Commitment\n\n- Locations and Campuses\n\n- Research Clusters Projects and Partnership Ethics and Integrity PhD programs Office for Research & Innovation\n\n- Research Clusters\n\n- Projects and Partnership\n\n- Ethics and Integrity\n\n- PhD programs\n\n- Office for Research & Innovation\n\n- Business & Industry\n\n- Employ our students and graduates Skills that make the difference Employers Partnerships Contact Business and Industry Corporate and Executive Development\n\n- Employ our students and graduates\n\n- Skills that make the difference\n\n- Partnerships\n\n- Contact Business and Industry\n\n- Corporate and Executive Development",
+  "data_quality": "incomplete_detail"
+}

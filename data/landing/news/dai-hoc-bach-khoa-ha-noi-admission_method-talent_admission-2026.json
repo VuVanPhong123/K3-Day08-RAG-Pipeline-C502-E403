@@ -1,0 +1,72 @@
+{
+  "url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026",
+  "title": "Quy định về Phương thức Xét tuyển tài năng năm 2026",
+  "institution": "Đại học Bách khoa Hà Nội",
+  "category": "admission_method",
+  "sub_category": "talent_admission",
+  "admission_year": 2026,
+  "date_crawled": "2026-08-04T12:38:03+07:00",
+  "language": "vi",
+  "source_domain": "ts.hust.edu.vn",
+  "page_type": "document_pointer",
+  "detected_page_type": "document_pointer",
+  "is_primary_evidence": false,
+  "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-che-tuyen-sinh-dai-hoc-nam-2026",
+  "discovered_from": "document pointer link text: TẠI ĐÂY",
+  "child_sources": [
+    {
+      "url": "https://ts.hust.edu.vn/b/xet-tuyen-tai-nang",
+      "anchor_text": "Xét tuyển tài năng",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://ts.hust.edu.vn/b/diem-chuan-tuyen-sinh",
+      "anchor_text": "Điểm chuẩn các năm",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://ts.hust.edu.vn/tin-tuc/hoc-phi-dai-hoc-chinh-quy",
+      "anchor_text": "Học phí - Học bổng",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://ts.hust.edu.vn/b/hoc-phi-hoc-bong",
+      "anchor_text": "Học phí - Học bổng",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://ts.hust.edu.vn/b/hoc-phi",
+      "anchor_text": "Học phí",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-dai-hoc-bach-khoa-ha-noi-2024-diem-thi-dgtd-cao-nhat-83-82-diem-thi-tot-nghiep-thpt-cao-nhat-28-53",
+      "anchor_text": "Điểm chuẩn Đại học Bách khoa Hà Nội 2024: Điểm thi ĐGTD cao nhất 83.82; điểm thi tốt nghiệp THPT cao nhất 28.53",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2023",
+      "anchor_text": "Điểm chuẩn trúng tuyển đại học hệ chính quy năm 2023",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://www.hust.edu.vn/uploads/sys/tuyen-sinh/2026_03/qui-dinh-ve-xttn-nam-2026-ky.pdf",
+      "anchor_text": "TẠI ĐÂY",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    },
+    {
+      "url": "https://ts.hust.edu.vn/b/xet-tuyen-tai-nang-2023",
+      "anchor_text": "xét tuyển tài năng 2023",
+      "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026"
+    }
+  ],
+  "crawl_stats": {
+    "visible_text_characters": 4378,
+    "link_count": 207,
+    "heading_count": 34,
+    "table_count": 0,
+    "table_rows": 0
+  },
+  "content_markdown": "# Quy định về Phương thức Xét tuyển tài năng năm 2026\n\n30-03-2026\n\na) Xét tuyển thẳng thí sinh đạt thành tích cao trong các kỳ thi cấp quốc gia hoặc quốc tế theo quy định của Bộ Giáo dục và Đào tạo (XTTN diện 1.1); b) Xét tuyển theo chứng chỉ quốc tế bao gồm các chứng chỉ SAT, ACT, A-Level, AP và IB (XTTN diện 1.2); c) Xét tuyển theo hồ sơ năng lực kết hợp phỏng vấn (XTTN diện 1.3). Chi tiết Quy định về Phương thức XTTN năm 2026 xem TẠI ĐÂY .\n\nChi tiết lộ trình xem tại bảng sau:",
+  "data_quality": "invalid"
+}

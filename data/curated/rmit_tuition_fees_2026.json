@@ -1,0 +1,45 @@
+{
+  "title": "Curated RMIT Vietnam tuition fees 2026",
+  "institution": "RMIT Việt Nam",
+  "category": "tuition_fee",
+  "sub_category": "tuition_table",
+  "admission_year": 2026,
+  "page_type": "curated_table",
+  "is_primary_evidence": true,
+  "url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees",
+  "data_quality": "complete",
+  "records": [
+    {
+      "institution": "RMIT Việt Nam",
+      "admission_year": 2026,
+      "school": "School of Science, Engineering & Technology",
+      "program": "Computer Science",
+      "program_level": "undergraduate",
+      "annual_credits": 96,
+      "annual_courses": 8,
+      "annual_fee_vnd": 375840000,
+      "whole_program_credits": 288,
+      "whole_program_courses": 24,
+      "whole_program_fee_vnd": 1127520000,
+      "indicative_usd_fee": 43035,
+      "source_url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees",
+      "evidence": "In the official tuition table under School of Science, Engineering & Technology, the row group for Computer Science lists Annual 96 credits/8 courses/VND 375,840,000 and Whole program 288 credits/24 courses/VND 1,127,520,000/indicative USD 43,035."
+    },
+    {
+      "institution": "RMIT Việt Nam",
+      "admission_year": 2026,
+      "school": "School of Science, Engineering & Technology",
+      "program": "Information Technology",
+      "program_level": "undergraduate",
+      "annual_credits": 96,
+      "annual_courses": 8,
+      "annual_fee_vnd": 375840000,
+      "whole_program_credits": 288,
+      "whole_program_courses": 22,
+      "whole_program_fee_vnd": 1127520000,
+      "indicative_usd_fee": 43035,
+      "source_url": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees",
+      "evidence": "In the official tuition table under School of Science, Engineering & Technology, the row group for Information Technology lists Annual 96 credits/8 courses/VND 375,840,000 and Whole program 288 credits/22 courses/VND 1,127,520,000/indicative USD 43,035."
+    }
+  ]
+}

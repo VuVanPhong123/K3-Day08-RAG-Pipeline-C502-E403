@@ -1,0 +1,47 @@
+{
+  "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students",
+  "title": "Important dates for students RMIT Việt Nam",
+  "institution": "RMIT Việt Nam",
+  "category": "application_timeline",
+  "sub_category": "important_dates",
+  "admission_year": 2026,
+  "date_crawled": "2026-08-04T12:38:08+07:00",
+  "language": "vi",
+  "source_domain": "www.rmit.edu.vn",
+  "page_type": "document_pointer",
+  "detected_page_type": "detail_page",
+  "is_primary_evidence": false,
+  "parent_url": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs",
+  "discovered_from": "",
+  "child_sources": [
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students",
+      "anchor_text": "arrow icon Important dates for students",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/phd-programs/phd-entry-requirements",
+      "anchor_text": "Entry requirements",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students/higher-education",
+      "anchor_text": "Higher education important dates",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students/pathways",
+      "anchor_text": "Pathway programs important dates",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students"
+    }
+  ],
+  "crawl_stats": {
+    "visible_text_characters": 3145,
+    "link_count": 303,
+    "heading_count": 12,
+    "table_count": 0,
+    "table_rows": 0
+  },
+  "content_markdown": "# Important dates\n\n- Study at RMIT\n\n- Study areas Undergraduate programs Postgraduate programs Pathway programs English language programs International students Apply to RMIT Global study options Scholarships Study at RMIT Melbourne Tuition fees Important dates for students\n\n- English language programs\n\n- International students\n\n- Apply to RMIT\n\n- Global study options\n\n- Scholarships\n\n- Study at RMIT Melbourne\n\n- Tuition fees\n\n- Important dates for students\n\n- Life on campus Sports and social clubs Support services Life and work opportunities\n\n- Life on campus\n\n- Sports and social clubs\n\n- Support services\n\n- Life and work opportunities\n\n- Why choose RMIT Vietnam RMIT Parents and Family Work at RMIT Schools and Centres Who we are Vietnam Country Commitment Locations and Campuses News Events\n\n- Why choose RMIT Vietnam\n\n- RMIT Parents and Family\n\n- Work at RMIT\n\n- Schools and Centres\n\n- Vietnam Country Commitment\n\n- Locations and Campuses\n\n- Research Clusters Projects and Partnership Ethics and Integrity PhD programs Office for Research & Innovation\n\n- Research Clusters\n\n- Projects and Partnership\n\n- Ethics and Integrity\n\n- PhD programs\n\n- Office for Research & Innovation\n\n- Business & Industry\n\n- Employ our students and graduates Skills that make the difference Employers Partnerships Contact Business and Industry Corporate and Executive Development\n\n- Employ our students and graduates\n\n- Skills that make the difference\n\n- Partnerships\n\n- Contact Business and Industry\n\n- Corporate and Executive Development\n\n## Important dates\n\n### Key dates and deadlines for the current and future academic year for all student cohorts at RMIT Vietnam.\n\n## RMIT Vietnam campuses\n\n### Higher education important dates\n\nKey academic dates and deadlines for undergraduate and postgraduate by coursework students studying at RMIT Vietnam campuses.\n\n### Pathway programs important dates\n\nKey academic dates and deadlines for Foundation Studies and English for University students at RMIT Vietnam.\n\n### Research important dates\n\n## RMIT Australia campuses\n\n### Higher education important dates\n\nKey academic dates and deadlines for undergraduate and postgraduate by coursework students studying at RMIT Australia campuses.\n\n### Foundation Studies important dates\n\nKey academic dates and deadlines for Foundation Studies students at RMIT Australia\n\n### For more information on program availability and advice, contact our student recruitment teams\n\nSaigon South campus student recruitment team\n\nTel: (+84) 28 3776 1369\n\nEmail: enquiries@rmit.edu.vn\n\nHanoi City campus student recruiment team\n\nTel: (+84) 24 3726 1460\n\nEmail: hanoi.enquiries@rmit.edu.vn\n\n#### Related links\n\n- Study at RMIT\n\n- Tuition fees\n\n- Contact\n\n- English language programs\n\n- International students\n\n- Apply to RMIT\n\n- Global study options\n\n- Scholarships\n\n- Study at RMIT Melbourne\n\n- Life on campus\n\n- Sports and social clubs\n\n- Support services\n\n- Life and work opportunities\n\n- Why choose RMIT Vietnam\n\n- RMIT parents and family\n\n- Work for RMIT\n\n- Schools & centres\n\n- Research Clusters\n\n- Projects and Partnerships\n\n- Ethics and Integrity\n\n- PhD Programs\n\n- Office for Research & Innovation\n\n- Employ our students & graduates\n\n- Skills that make the difference\n\n- Partnerships",
+  "data_quality": "incomplete_detail"
+}

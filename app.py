@@ -65,11 +65,11 @@ with st.sidebar:
 
     st.subheader("Câu hỏi gợi ý")
     suggestions = [
-        "Điều kiện xét tuyển bằng IELTS vào Đại học Bách khoa Hà Nội là gì?",
-        "So sánh học phí ngành Khoa học Máy tính giữa VinUni và RMIT.",
-        "Điểm chuẩn ngành Công nghệ thông tin thay đổi thế nào qua các năm?",
+        "Điều kiện IELTS vào HUST năm 2026 là gì?",
+        "HUST chấp nhận những chứng chỉ quốc tế nào?",
+        "Chỉ tiêu ngành Khoa học Máy tính HUST năm 2026 là bao nhiêu?",
+        "Học phí Computer Science tại RMIT năm 2026 là bao nhiêu?",
         "VinUni có những chương trình học bổng nào?",
-        "Tôi cần chuẩn bị giấy tờ gì để đăng ký xét tuyển?",
     ]
     for idx, text in enumerate(suggestions):
         if st.button(text, key=f"suggestion_{idx}", use_container_width=True):
@@ -126,7 +126,10 @@ if query:
     with st.chat_message("assistant"):
         with st.spinner("Đang truy xuất tài liệu tuyển sinh và tổng hợp câu trả lời..."):
             try:
-                recent_history = st.session_state.messages[-8:]
+                recent_history = [
+                    {"role": item["role"], "content": item["content"]}
+                    for item in st.session_state.messages[:-1][-8:]
+                ]
                 response = generate_with_citation(query, top_k=top_k, history=recent_history)
                 answer = response.get("answer", "I cannot verify this information")
                 sources = response.get("sources", [])

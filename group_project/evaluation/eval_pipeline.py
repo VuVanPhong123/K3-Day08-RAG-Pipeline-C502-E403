@@ -97,7 +97,7 @@ def compare_configs(dataset: list[dict], limit: int | None = None, resume: bool 
         return json.loads(CACHE_PATH.read_text(encoding="utf-8"))
     os.environ["FORCE_LOCAL_GENERATION"] = "1"
     comparison = {
-        "framework": "Local proxy evaluation — not official RAGAS scores",
+        "framework": "Local proxy evaluation - not official RAGAS scores",
         "ran_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "corpus_fingerprint": corpus_fingerprint(),
         "configs": {

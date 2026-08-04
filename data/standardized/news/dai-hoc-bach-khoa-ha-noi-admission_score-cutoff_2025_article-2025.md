@@ -1,0 +1,21 @@
+# Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025
+
+- Institution: Đại học Bách khoa Hà Nội
+- Source: https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa
+- Admission year: 2025
+- Document type: admission_score
+- Page type: detail_page
+- Primary evidence: True
+- Parent source: https://ts.hust.edu.vn/b/diem-chuan-tuyen-sinh
+- Retrieved at: 2026-08-04T12:38:04+07:00
+
+---
+# Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025: 29,39 điểm THPT, tương đương 93–96 điểm XTTN và 86,97 điểm TSA
+
+22-08-2025
+
+Theo PGS. Vũ Duy Hải – Trưởng Ban Tuyển sinh – Hướng nghiệp, Đại học Bách khoa Hà Nội, tính tới thời điểm 16h00 chiều nay, công tác lọc ảo của nhóm xét tuyển miền Bắc do Đại học Bách khoa Hà Nội chủ trì đã hoàn thành nhiệm vụ theo quy trình chung. Mặc dù năm nay có nhiều điểm mới trong công tác tuyển sinh, dẫn tới phát sinh nhiều kỹ thuật tính toán và dữ liệu cần phải xử lý trên hệ thống so với năm 2024, tuy nhiên kết quả lọc ảo đã được thực hiện đồng bộ, chính xác và bàn giao cho các trường trong nhóm theo đúng thời hạn quy định của Bộ Giáo dục và Đào tạo. Về điểm chuẩn trúng tuyển vào các chương trình đào tạo của Đại học Bách khoa Hà Nội khá sát so với mức Nhà trường đã dự báo, đặc biệt đối với các ngành top dưới. Với các ngành top trên thì điểm chuẩn cao hơn khoảng 1 điểm so với dự báo. Chương trình tiên tiến Khoa học dữ liệu và Trí tuệ nhân tạo (IT-E10) có điểm chuẩn cao nhất là 29,39 điểm theo điểm thi tốt nghiệp THPT. Tiếp theo là Chương trình Khoa học máy tính (IT1) có điểm chuẩn là 29,19 điểm. Các ngành “hot” đều có điểm chuẩn rất cao như Chương trình Kỹ thuật Điều khiển - Tự động hoá (EE2) có điểm chuẩn là 28,48 điểm; Chương trình Kỹ thuật Vi điện tử và Công nghệ nano (MS2) có điểm chuẩn là 28,25; Chương trình Kỹ thuật Điện tử - Viễn thông (ET1) có điểm chuẩn là 28,07 điểm. Chương trình có điểm chuẩn thấp nhất năm nay là TROY-BA với mức điểm là 19,00 điểm theo điểm thi tốt nghiệp THPT. Chi tiết điểm chuẩn trúng tuyển vào các chương trình đào tạo của Đại học Bách khoa Hà Nội năm 2025 như sau:
+
+Độ lệch điểm giữa các tổ hợp xét tuyển Căn cứ theo hướng dẫn chung của Bộ Giáo dục và Đào tạo và phổ điểm thi tốt nghiệp trung học phổ thông (THPT) năm 2025, Đại học Bách khoa Hà Nội đã công bố độ lệch điểm giữa các tổ hợp xét tuyển theo phương thức sử dụng điểm thi tốt nghiệp THPT như sau:
+
+| Điểm chuẩn được xác định dựa trên điểm xét (ĐX) như sau: a) Điểm xét tuyển theo kết quả Kỳ thi tốt nghiệp THPT năm 2025 với tổ hợp môn không có môn chính, thang điểm 30: ĐX = [(Môn 1+ Môn 2 + Môn 3)] + Điểm ưu tiên1 b) Điểm xét tuyển theo kết quả Kỳ thi tốt nghiệp THPT năm 2025 với tổ hợp môn có môn chính, thang điểm 30: ĐX = [(Môn 1 + Môn 2 + Môn 3 + Môn chính) x 3/4 ] + Điểm ưu tiên1 c) Điểm xét tuyển theo kết quả Kỳ thi tốt nghiệp THPT năm 2025 với tổ hợp K01, thang điểm 30: ĐX = [(Toán x 3 + Ngữ Văn x 1 + Lý/Hóa/Sinh/Tin x 2) x 1/2 ] + Điểm ưu tiên1 d) Điểm xét tuyển theo kết quả Kỳ thi Đánh giá tư duy (ĐGTD) năm 2024 hoặc 2025, tổ hợp K00, thang điểm 100: ĐX = Điểm thi ĐGTD2 + Điểm ưu tiên3 + Điểm thưởng4 e) Điểm xét tuyển theo phương thức XTTN diện 1.2 (Chứng chỉ quốc tế) và 1.3 (Hồ sơ năng lực kết hợp phỏng vấn), thang điểm 100: ĐX = Điểm XTTN + Điểm ưu tiên3 Điểm xét được làm tròn đến 2 chữ số thập phân sau dấu phẩy. ----------------------------- 1) Điểm ưu tiên đối tượng, ưu tiên khu vực theo Quy chế tuyển sinh đại học, cao đẳng ngành giáo dục Mầm non (Ban hành kèm theo thông tư số 08/2022/TT-BGDĐT ngày 06 tháng 6 năm 2022 của Bộ trưởng Bộ Giáo dục và Đào tạo và Thông tư số 06/2025/TT-BGDĐT ngày 19 tháng 3 năm 2025 của Bộ trưởng Bộ Giáo dục và Đào tạo về việc sửa đổi, bổ sung một số điều của Quy chế tuyển sinh đại học, tuyển sinh cao đẳng ngành Giáo dục Mầm non). (2) Điểm thi ĐGTD là điểm cao nhất trong các lần thi ĐGTD năm 2024 và 2025. (3) Điểm ưu tiên đối tượng, khu vực quy về thang điểm 100. (4) Điểm thưởng đối với thí sinh có chứng chỉ IELTS (academic) hoặc tương đương, theo Quy chế tuyển sinh đại học của ĐHBK Hà Nội (Ban hành kèm theo Quyết định số 5919/QĐ-ĐHBK ngày 10 tháng 6 năm 2025 của Giám đốc Đại học Bách khoa Hà Nội. Quy chế tuyển sinh đại học của ĐHBK Hà Nội (Ban hành kèm theo Quyết định số 5919/QĐ-ĐHBK ngày 10 tháng 6 năm 2025 của Giám đốc Đại học Bách khoa Hà Nội. |
