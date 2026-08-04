@@ -4,114 +4,14 @@
 - Source: https://www.rmit.edu.vn/study-at-rmit/tuition-fees
 - Admission year: 2026
 - Document type: tuition_fee
-- Retrieved at: 2026-08-04T10:58:32+07:00
+- Retrieved at: 2026-08-04T11:24:25+07:00
 
 ---
-# Tuition fees
+# Học phí RMIT Việt Nam
 
-* RMIT Australia
+### VND Fee
 
-[](javascript:void\(0\);)
-
-[](javascript:void\(0\);)
-
-Search field
-
-[](javascript:void\(0\);)[](javascript:void\(0\);)[](javascript:void\(0\);)
-
-* [Study areas](/study-at-rmit/study-areas)[](javascript:void\(0\);)
-
-* [Undergraduate programs](/study-at-rmit/undergraduate-programs)[](javascript:void\(0\);)
-
-* [Postgraduate programs](/study-at-rmit/postgraduate-programs)[](javascript:void\(0\);)
-
-* [Pathway programs](/study-at-rmit/pathway-programs)[](javascript:void\(0\);)
-
-* [English language programs](/study-at-rmit/english-language-programs)[](javascript:void\(0\);)
-
-* [PhD programs](/study-at-rmit/phd-programs)[](javascript:void\(0\);)
-
-* [International students](/study-at-rmit/international-students)[](javascript:void\(0\);)
-
-* [Global experience](/study-at-rmit/global-experiences)[](javascript:void\(0\);)
-
-* [Scholarships](/study-at-rmit/scholarships)[](javascript:void\(0\);)
-
-* [Study at RMIT Melbourne](/study-at-rmit/study-at-rmit-melbourne)[](javascript:void\(0\);)
-
-* [Tuition fees](/study-at-rmit/tuition-fees)[](javascript:void\(0\);)
-
-* [Discover the blended learning experience](/study-at-rmit/blended-learning-experience)[](javascript:void\(0\);)
-
-* [Important dates](/study-at-rmit/important-dates-for-students)[](javascript:void\(0\);)
-
-[RMIT Vietnam](/)[](javascript:void\(0\);)
-
-* RMIT Australia
-
-* [Study at RMIT](/study-at-rmit)[](javascript:void\(0\);)
-
-* [Student life](/student-life)[](javascript:void\(0\);)
-
-* [About](/about-us)[](javascript:void\(0\);)
-
-* [Research](/research)[](javascript:void\(0\);)
-
-* [Business & Industry](/business-and-industry)[](javascript:void\(0\);)
-
-## Tuition fees
-
-At RMIT, tuition fee payments are made each semester, on a course-by-course basis.
-
-At RMIT, tuition fee payments are made each semester, on a course-by-course basis.
-
-[Home](/) / [Study at RMIT](/study-at-rmit) / [Tuition fees](/study-at-rmit/tuition-fees)
-
-* [Study areas](/study-at-rmit/study-areas)[](javascript:void\(0\);)
-
-* [Undergraduate programs](/study-at-rmit/undergraduate-programs)[](javascript:void\(0\);)
-
-* [Postgraduate programs](/study-at-rmit/postgraduate-programs)[](javascript:void\(0\);)
-
-* [Pathway programs](/study-at-rmit/pathway-programs)[](javascript:void\(0\);)
-
-* [English language programs](/study-at-rmit/english-language-programs)[](javascript:void\(0\);)
-
-* [PhD programs](/study-at-rmit/phd-programs)[](javascript:void\(0\);)
-
-* [International students](/study-at-rmit/international-students)[](javascript:void\(0\);)
-
-* [Global experience](/study-at-rmit/global-experiences)[](javascript:void\(0\);)
-
-* [Scholarships](/study-at-rmit/scholarships)[](javascript:void\(0\);)
-
-* [Study at RMIT Melbourne](/study-at-rmit/study-at-rmit-melbourne)[](javascript:void\(0\);)
-
-* [Tuition fees](/study-at-rmit/tuition-fees)[](javascript:void\(0\);)
-
-* [Discover the blended learning experience](/study-at-rmit/blended-learning-experience)[](javascript:void\(0\);)
-
-* [Important dates](/study-at-rmit/important-dates-for-students)[](javascript:void\(0\);)
-
-Below are the tuition fees applicable to students who are new to the University and enrolled in a Higher Education program in 2026.
-
-Fees for continuing students in 2026 will be published separately on the student website. If you are unsure on how tuition fees apply to you, or if you want to learn more, please refer to the Student Fees & Charges Guide or contact us via our enquiries email address. Links are at the bottom of the page.
-
-## RMIT Vietnam tuition fees
-
-Expand all sections )
-
-## English for University fees
-
-Find out about our fees [here](/study-at-rmit/tuition-fees/english-for-university-fees).
-
-## UniSTART Academic fees
-
-You can find our UniSTART Academic fees on its [program page](/study-at-rmit/pathway-programs/unistart/unistart-academic).
-
-## Foundation studies fees
-
-### Program name
+### USD Fee
 
 ### (indicative)
 
@@ -120,6 +20,8 @@ Whole program | 316,992,000 | 12,099
 ### The Business School
 
 ### Program name
+
+### VND Fee
 
 ### Indicative USD fee
 
@@ -134,6 +36,8 @@ Whole program | 288 | 24 | 1,127,520,000 | 43,035
 #### *The annual tuition fee is indicative based on an average student's study load
 
 ### School of Communication & Design
+
+### Program name
 
 ### Indicative USD fee
 
@@ -202,8 +106,6 @@ Whole program | 192 | 16 | 895,872,000 | 34,194
 A trimester-long Study Abroad program consists of four courses per semester, which is equivalent to a full-time study load. As long as you meet the entry requirements for each course, you can choose courses from across all programs. [Search for courses](/study-at-rmit/international-students/course-search-for-international-students) you can take as a study abroad student at RMIT Vietnam.
 
 **Name** | **Credit** | **Course** | **VND Fee** | **Indicative USD Fee***
-
----|---|---|---|---
 
 Undergraduate 4-course package | 48 | 4 courses | 164,000,000 | 6,260
 
@@ -300,11 +202,5 @@ Tel: (+84) 28 3776 1369
 enquiries@rmit.edu.vn
 
 [Study at RMIT](/study-at-rmit) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
-
-[Student life](/student-life) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
-
-[About](/about-us) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
-
-[Research](/research) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
 
 [Business & Industry](/business-and-industry) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)

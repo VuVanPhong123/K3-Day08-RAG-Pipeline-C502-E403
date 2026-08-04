@@ -4,7 +4,7 @@
 - Source: https://tuyensinh.hcmus.edu.vn/2025-thong-tin-tuyen-sinh/
 - Admission year: 2025
 - Document type: admission_method
-- Retrieved at: 2026-08-04T10:58:33+07:00
+- Retrieved at: 2026-08-04T11:24:26+07:00
 
 ---
 # THÔNG TIN TUYỂN SINH NĂM 2025

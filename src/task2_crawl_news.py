@@ -56,6 +56,8 @@ MENU_PATTERNS = [
     r"^\s*(facebook|youtube|linkedin|instagram|twitter|x|zalo)\s*$",
     r"^\s*(đăng nhập|login|register|search|tìm kiếm)\s*$",
     r"^\s*(previous|next|back to top|menu)\s*$",
+    r"^\s*(skip to content|search field|rmit australia|rmit europe|students|alumni|staff|library)\s*$",
+    r"^\s*(study areas|undergraduate programs|postgraduate programs|pathway programs|student life|about|research)\s*$",
     r"^\s*hotline\s*:?\s*[\d .+-]*\s*$",
 ]
 
@@ -183,12 +185,15 @@ def _is_noise_line(line: str) -> bool:
     stripped = line.strip()
     if not stripped:
         return True
+    if "javascript:void" in stripped.lower():
+        return True
     plain = re.sub(r"^[#*\-\s>]+", "", stripped).strip()
+    visible = _visible_match_text(plain)
     if re.fullmatch(r"\[?[^\]]+\]?\([^)]+\)", plain) or re.fullmatch(r"https?://\S+", plain):
         return True
-    if len(plain) < 12 and not re.search(r"\d|ielts|sat|act|gpa|học phí|chỉ tiêu|điểm", plain.lower()):
+    if len(visible) < 12 and not re.search(r"\d|ielts|sat|act|gpa|học phí|tuition|fee|chỉ tiêu|điểm", visible.lower()):
         return True
-    if any(re.search(pattern, plain, flags=re.IGNORECASE) for pattern in MENU_PATTERNS):
+    if any(re.search(pattern, visible, flags=re.IGNORECASE) for pattern in MENU_PATTERNS):
         return True
     return False
 
@@ -215,6 +220,25 @@ def _find_content_start(lines: list[str], expected_title: str, crawled_title: st
     return 0
 
 
+def _refine_source_start(lines: list[str], start: int, source_url: str, expected_title: str) -> tuple[list[str], int]:
+    domain = urlparse(source_url).netloc.lower()
+    expected = _normalize_text(expected_title)
+    if "rmit.edu.vn" not in domain:
+        return lines, start
+
+    markers: list[str] = []
+    if "tuition" in expected or "học phí" in expected:
+        markers = ["vnd fee", "standard tuition fee", "program fees are priced", "indicative usd fee"]
+    elif "application" in expected or "đăng ký" in expected:
+        markers = ["## how to apply", "### 1. find your program", "prepare your documents", "submit your application"]
+    for index in range(start, len(lines)):
+        normalized = _normalize_text(lines[index])
+        if any(marker in normalized for marker in markers):
+            refined = max(start, index - 3)
+            return [f"# {expected_title}", *lines[refined:]], 0
+    return lines, start
+
+
 def sanitize_crawled_markdown(markdown: str, source_url: str, expected_title: str, crawled_title: str = "") -> str:
     """Keep the main admission article body and reject contaminated crawl output."""
 
@@ -224,6 +248,7 @@ def sanitize_crawled_markdown(markdown: str, source_url: str, expected_title: st
 
     raw_lines = [re.sub(r"\s+", " ", line).strip() for line in markdown.splitlines()]
     start = _find_content_start(raw_lines, expected_title, crawled_title)
+    raw_lines, start = _refine_source_start(raw_lines, start, source_url, expected_title)
     raw_lines = raw_lines[start:]
 
     cleaned: list[str] = []

@@ -4,14 +4,10 @@
 - Source: https://admissions.vinuni.edu.vn/tuition-fee/undergraduate/
 - Admission year: 2026
 - Document type: tuition_fee
-- Retrieved at: 2026-08-04T10:58:30+07:00
+- Retrieved at: 2026-08-04T11:24:24+07:00
 
 ---
-# Undergraduate programs
-
 [Home](https://admissions.vinuni.edu.vn) [Tuition Fee](https://admissions.vinuni.edu.vn/tuition-fee/)Undergraduate programs
-
-Undergraduate programs
 
 **UNDERGRADUATE PROGRAMS – TUITION FEES**
 
@@ -24,8 +20,6 @@ _At VinUniversity, we believe that every talented student deserves access to wor
 Currency Unit: VND
 
 **Program** | **Standard Duration (years)** | **Listed Tuition Fee per Academic Year** | **Listed Tuition Fee per Semester** | **Listed Tuition Fee per Credit**
-
----|---|---|---|---
 
 Bachelor of Nursing | 4 | 349,650,000 | 174,825,000 | 9,780,000
 
@@ -60,8 +54,6 @@ _**Important Notes:**_
 Please visit our **[Scholarships& Financial Aid](https://admissions.vinuni.edu.vn/scholarship-and-financial-aid/undergraduate-programs/financial-aids/)** page to learn about tuition subsidies, merit-based scholarships, and financial support programs available to both Vietnamese and international students.
 
 _Last updated: July 2026._
-
-[ ![logo](https://admissions.vinuni.edu.vn/wp-content/uploads/sites/6/2024/04/logo-admissions.png) ](https://admissions.vinuni.edu.vn)
 
 * College of Business & Management
 

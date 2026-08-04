@@ -4,7 +4,7 @@
 - Source: https://ts.hust.edu.vn/tin-tuc/quy-che-tuyen-sinh-dai-hoc-nam-2026
 - Admission year: 2026
 - Document type: admission_method
-- Retrieved at: 2026-08-04T10:58:29+07:00
+- Retrieved at: 2026-08-04T11:24:23+07:00
 
 ---
 # Quy chế tuyển sinh đại học năm 2026
@@ -22,7 +22,5 @@ Quy định về Phương thức XTTN năm 2026 áp dụng cho thí sinh đăng 
 a) Xét tuyển thẳng thí sinh đạt thành tích cao trong các kỳ thi cấp quốc gia hoặc quốc tế theo quy định của Bộ Giáo dục và Đào tạo (XTTN diện 1.1);b) Xét tuyển theo chứng chỉ quốc tế bao gồm các chứng chỉ SAT, ACT, A-Level, AP và IB (XTTN diện 1.2);c) Xét tuyển theo hồ sơ năng lực kết hợp phỏng vấn (XTTN diện 1.3).
 
 **Chi tiết Quy định về Phương thức XTTN năm 2026 xem[TẠI ĐÂY](https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026).**
-
-* [](https://ts.hust.edu.vn/login) Lưu tin
 
 * [](#) Bình luận

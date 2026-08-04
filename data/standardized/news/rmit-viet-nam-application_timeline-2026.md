@@ -4,56 +4,10 @@
 - Source: https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs
 - Admission year: 2026
 - Document type: application_timeline
-- Retrieved at: 2026-08-04T10:58:32+07:00
+- Retrieved at: 2026-08-04T11:24:26+07:00
 
 ---
-# Apply for undergraduate programs
-
-* RMIT Australia
-
-[](javascript:void\(0\);)
-
-[](javascript:void\(0\);)
-
-Search field
-
-[](javascript:void\(0\);)[](javascript:void\(0\);)[](javascript:void\(0\);)
-
-* [Apply for undergraduate programs](/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs)[](javascript:void\(0\);)
-
-* [Bachelor of Business](/study-at-rmit/undergraduate-programs/bachelor-business)[](javascript:void\(0\);)
-
-[RMIT Vietnam](/)[](javascript:void\(0\);)
-
-* RMIT Australia
-
-* [Study at RMIT](/study-at-rmit)[](javascript:void\(0\);)
-
-* [Student life](/student-life)[](javascript:void\(0\);)
-
-* [About](/about-us)[](javascript:void\(0\);)
-
-* [Research](/research)[](javascript:void\(0\);)
-
-* [Business & Industry](/business-and-industry)[](javascript:void\(0\);)
-
-## Apply for undergraduate programs
-
-[Home](/) / [Study at RMIT](/study-at-rmit) / [Undergraduate programs](/study-at-rmit/undergraduate-programs) / [Apply for undergraduate programs](/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs)
-
-* [Apply for undergraduate programs](/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs)[](javascript:void\(0\);)
-
-* [Bachelor of Business](/study-at-rmit/undergraduate-programs/bachelor-business)[](javascript:void\(0\);)
-
-This information is for Vietnamese students who are graduating from a local school, and for future students who have international qualifications and are intending to study full-time at RMIT University Vietnam.
-
-If you are an international student who wants to study in Vietnam for one or two semesters, please find out more on the [international student page](/study-at-rmit/international-students).
-
-If you are studying at a local Vietnamese university and you would like to apply to transfer your degree to RMIT, please contact our Student Recruitment Team, as you may be able to transfer academic credit to your new RMIT program.
-
-### 1. Find your program
-
-### 2. Check your eligibility
+# Đăng ký chương trình đại học RMIT Việt Nam
 
 ### 3. Prepare your documents
 
@@ -115,12 +69,8 @@ Phone number: 024 3726 1460
 
 #### Related links and downloads
 
+*  Apply for undergraduate programs
+
 [Study at RMIT](/study-at-rmit) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
-
-[Student life](/student-life) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
-
-[About](/about-us) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
-
-[Research](/research) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)
 
 [Business & Industry](/business-and-industry) ![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-white.svg)![](/etc.clientlibs/rmit/clientlibs/clientlib-webpack/resources/icons/down-chevron-grey.svg)

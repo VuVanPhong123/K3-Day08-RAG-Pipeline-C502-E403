@@ -4,7 +4,7 @@
 - Source: https://admissions.vinuni.edu.vn/scholarship-and-financial-aid/undergraduate-programs/scholarships/
 - Admission year: 2026
 - Document type: scholarship
-- Retrieved at: 2026-08-04T10:58:31+07:00
+- Retrieved at: 2026-08-04T11:24:24+07:00
 
 ---
 # Scholarships
@@ -60,8 +60,6 @@ This program is designed for outstanding applicants who have earned a **Merit-ba
 * The scholarship amount awarded is based on the evaluation results according to the criteria set by the Admissions Council.
 
 * The scholarship applies for the entire duration of study and is subject to meeting the minimum scholarship maintenance conditions set by the university. Please refer to the Detailed Regulations **[[HERE]]()**. We believe that these minimum maintenance conditions will help students maintain their academic performance, extracurricular development, and live up to the decision made by the Admissions Council in awarding the Merit-based Scholarship.
-
-[ ![logo](https://admissions.vinuni.edu.vn/wp-content/uploads/sites/6/2024/04/logo-admissions.png) ](https://admissions.vinuni.edu.vn)
 
 * College of Business & Management
 

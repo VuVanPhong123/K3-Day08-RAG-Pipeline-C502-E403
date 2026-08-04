@@ -4,7 +4,7 @@
 - Source: https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026
 - Admission year: 2026
 - Document type: admission_quota
-- Retrieved at: 2026-08-04T10:58:29+07:00
+- Retrieved at: 2026-08-04T11:24:22+07:00
 
 ---
 # Thông tin Tuyển sinh Đại học chính quy năm 2026
@@ -74,8 +74,6 @@ Năm 2026, ĐHBK Hà Nội dự kiến tuyển sinh 68 chương trình đào t�
 **Danh mục các chương trình đào tạo, chỉ tiêu, phương thức và mã xét tuyển**
 
 **TT** | **Chương trình/ngành đào tạo** | **Chỉ tiêu****dự kiến** | **Mã xét tuyển** | **Phương****thức tuyển sinh**
-
----|---|---|---|---
 
 **XTTN** | **ĐGTD** | **THPT**
 
@@ -236,7 +234,5 @@ Năm 2026, ĐHBK Hà Nội dự kiến tuyển sinh 68 chương trình đào t�
 (1) Đối tượng dự thi: Là học sinh THPT, thí sinh tự do(2) Phạm vi: Tất cả các Tỉnh, Thành phố trên toàn quốc(3) Hình thức thi: Thi trắc nghiệm khách quan trên máy tính(4) Số đợt thi TSA dự kiến gồm 03 đợt vào các ngày Thứ 7/Chủ Nhật, cụ thể:- Đợt 1: Ngày thi 24-25/01/2026; Ngày đăng ký 05-15/12/2025- Đợt 2: Ngày thi 14-15/03/2026; Ngày đăng ký 05-15/02/2026- Đợt 3: Ngày thi 16-17/05/2026; Ngày đăng ký 05-15/04/2026- Địa điểm tổ chức thi: Tại 11 tỉnh/thành phố gồm Hà Nội, Hưng Yên, Hải Phòng, Quảng Ninh, Thái Nguyên, Lào Cai, Ninh Bình, Nghệ An, Thanh Hóa, Hà Tĩnh, Đà Nẵng. (5) Các khối ngành có thể sử dụng kết quả Kỳ thi Đánh giá tư duy để xét tuyển đại học: Các khối ngành khoa học kỹ thuật, công nghệ; Các khối ngành kinh tế, ngoại thương, tài chính, ngân hàng; Các khối ngành y, dược; Các khối ngành công nghiệp, nông-lâm nghiệp, kỹ thuật hậu cần quân sự.../.
 
 * Xem thêm: **Flyer Thông tin Tuyển sinh Đại học chính quy 2026**
-
-* [](https://ts.hust.edu.vn/login) Lưu tin
 
 * [](#) Bình luận
