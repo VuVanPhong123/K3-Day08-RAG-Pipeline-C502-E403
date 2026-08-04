@@ -17,12 +17,23 @@ Hướng dẫn:
 """
 
 import json
+import sys
 from pathlib import Path
+
+# Add local vendor dependencies directory to sys.path
+DEPS_DIR = Path(__file__).parent / "deps"
+if DEPS_DIR.exists() and str(DEPS_DIR) not in sys.path:
+    sys.path.insert(0, str(DEPS_DIR))
 
 from markitdown import MarkItDown
 
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
+
 
 
 def convert_legal_docs():
@@ -36,12 +47,13 @@ def convert_legal_docs():
     for filepath in legal_dir.iterdir():
         if filepath.suffix.lower() in (".pdf", ".docx", ".doc"):
             print(f"Converting: {filepath.name}")
-            # TODO: Convert và lưu file
-            # result = md.convert(str(filepath))
-            # output_path = output_dir / f"{filepath.stem}.md"
-            # output_path.write_text(result.text_content, encoding="utf-8")
-            # print(f"  ✓ Saved: {output_path}")
-            raise NotImplementedError("Implement convert_legal_docs")
+            try:
+                result = md.convert(str(filepath))
+                output_path = output_dir / f"{filepath.stem}.md"
+                output_path.write_text(result.text_content, encoding="utf-8")
+                print(f"  [OK] Saved: {output_path}")
+            except Exception as e:
+                print(f"  [ERROR] Failed to convert {filepath.name}: {e}")
 
 
 def convert_news_articles():
@@ -53,19 +65,29 @@ def convert_news_articles():
     for filepath in news_dir.iterdir():
         if filepath.suffix.lower() == ".json":
             print(f"Converting: {filepath.name}")
-            # TODO: Đọc JSON, extract content_markdown, lưu thành .md
-            # data = json.loads(filepath.read_text(encoding="utf-8"))
-            # output_path = output_dir / f"{filepath.stem}.md"
-            #
-            # # Thêm metadata header
-            # header = f"# {data.get('title', 'Unknown')}\n\n"
-            # header += f"**Source:** {data.get('url', 'N/A')}\n"
-            # header += f"**Crawled:** {data.get('date_crawled', 'N/A')}\n\n---\n\n"
-            #
-            # content = header + data.get("content_markdown", "")
-            # output_path.write_text(content, encoding="utf-8")
-            # print(f"  ✓ Saved: {output_path}")
-            raise NotImplementedError("Implement convert_news_articles")
+            try:
+                data = json.loads(filepath.read_text(encoding="utf-8"))
+                output_path = output_dir / f"{filepath.stem}.md"
+
+                # If data is a list of articles (e.g. combined json file)
+                if isinstance(data, list):
+                    combined_markdowns = []
+                    for idx, item in enumerate(data, 1):
+                        header = f"# [{idx}] {item.get('title', 'Unknown')}\n\n"
+                        header += f"**Source:** {item.get('url', 'N/A')}\n"
+                        header += f"**Crawled:** {item.get('date_crawled', 'N/A')}\n\n---\n\n"
+                        combined_markdowns.append(header + item.get("content_markdown", ""))
+                    content = "\n\n========================================\n\n".join(combined_markdowns)
+                else:
+                    header = f"# {data.get('title', 'Unknown')}\n\n"
+                    header += f"**Source:** {data.get('url', 'N/A')}\n"
+                    header += f"**Crawled:** {data.get('date_crawled', 'N/A')}\n\n---\n\n"
+                    content = header + data.get("content_markdown", "")
+
+                output_path.write_text(content, encoding="utf-8")
+                print(f"  [OK] Saved: {output_path}")
+            except Exception as e:
+                print(f"  [ERROR] Failed to convert {filepath.name}: {e}")
 
 
 def convert_all():
@@ -80,8 +102,9 @@ def convert_all():
     print("\n--- News Articles ---")
     convert_news_articles()
 
-    print("\n✓ Done! Output tại:", OUTPUT_DIR)
+    print("\n[OK] Done! Output tại:", OUTPUT_DIR)
 
 
 if __name__ == "__main__":
     convert_all()
+
