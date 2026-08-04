@@ -1,105 +1,67 @@
-# Bài Tập Nhóm — University Services RAG Chatbot
+# Group Project - University Admission RAG Assistant
 
 ## Mục Tiêu
 
-Sau khi hoàn thành bài cá nhân, nhóm ngồi lại để xây dựng **1 trong 2 sản phẩm**:
+Xây dựng chatbot RAG tra cứu tuyển sinh đại học: điểm chuẩn, phương thức xét tuyển, điều kiện IELTS/SAT, học phí, học bổng, chỉ tiêu, hồ sơ và timeline từ nguồn chính thức.
 
----
+## Kiến Trúc
 
-## Yêu cầu 1: Sản phẩm nhóm RAG Chatbot
-
-Xây dựng chatbot trả lời câu hỏi về dịch vụ và chính sách đại học liên quan.
-
-**Yêu cầu:**
-- Giao diện chat (Streamlit / Gradio / Chainlit)
-- Trả lời có citation (dựa trên Task 10)
-- Hỗ trợ follow-up questions (conversation memory)
-- Hiển thị source documents đã dùng
-
-**Stack gợi ý:**
-```
-Chainlit/Streamlit → Retrieval (Task 9) → Generation (Task 10) → Display
+```text
+Streamlit
+  -> Conversation memory
+  -> Task 9 retrieval pipeline
+       -> Semantic search / ChromaDB
+       -> BM25 + TF-IDF
+       -> RRF
+       -> PageIndex hoặc local structural fallback
+  -> Task 10 Gemini/OpenAI/local generation
+  -> Answer with citations + source evidence
 ```
 
----
+## Phân Công 6 Thành Viên
 
-## Yêu cầu 2: RAG Evaluation Pipeline
-
-Sử dụng **1 trong 3 framework** sau để evaluate pipeline RAG của nhóm:
-
-### Framework lựa chọn
-
-| Framework | Cài đặt | Đặc điểm |
-|-----------|---------|-----------|
-| [DeepEval](https://github.com/confident-ai/deepeval) | `pip install deepeval` | Nhiều metric built-in, dễ integrate với pytest |
-| [RAGAS](https://github.com/explodinggradients/ragas) | `pip install ragas` | Chuẩn industry cho RAG eval, 3 trục chính |
-| [TruLens](https://github.com/truera/trulens) | `pip install trulens` | Dashboard UI, feedback functions mạnh |
-
-### Yêu cầu Evaluation
-
-1. **Tạo Golden Dataset** — tối thiểu 15 cặp Q&A (question, expected_answer, expected_context)
-2. **Chạy evaluation** trên toàn bộ golden dataset với các metrics sau:
-   - **Faithfulness** — câu trả lời có bám đúng context không?
-   - **Answer Relevance** — câu trả lời có đúng câu hỏi không?
-   - **Context Recall** — retriever có lấy đủ evidence không?
-   - **Context Precision** — trong context lấy về, bao nhiêu % thực sự hữu ích?
-3. **So sánh A/B** — chạy eval trên ít nhất 2 config khác nhau (ví dụ: có reranking vs không reranking, hoặc hybrid vs dense-only)
-4. **Báo cáo** — bảng điểm + phân tích worst performers + đề xuất cải tiến
-
-Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục "Yêu cầu 2".
-
-### Deliverable Evaluation
-
-- [ ] File `group_project/evaluation/golden_dataset.json` — 15+ cặp Q&A
-- [ ] File `group_project/evaluation/eval_pipeline.py` — script chạy evaluation
-- [ ] File `group_project/evaluation/results.md` — bảng điểm + phân tích
-- [ ] So sánh A/B ít nhất 2 configs
-
----
-
-## Yêu Cầu Chung
-
-1. **Tích hợp pipeline** từ bài cá nhân của các thành viên
-2. **Demo hoạt động được** trong buổi trình bày (chạy local hoặc deploy)
-3. **Evaluation pipeline** chạy được và có báo cáo kết quả
-4. **Code push lên repository** chung của nhóm
-5. **README** mô tả kiến trúc và phân công (điền bên dưới)
-
----
-
-## Kiến Trúc Hệ Thống
-
-```
-[Vẽ diagram kiến trúc ở đây]
-```
-
----
-
-## Phân Công Công Việc
-
-| Thành viên | MSSV | Nhiệm vụ | Trạng thái |
-|-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
-
----
+| Thành viên | MSSV | Vai trò | Công việc |
+|---|---|---|---|
+| Vũ Văn Phong | 2A202601647 | Team Leader & RAG Architect | Kiến trúc, Task 9, tích hợp, code review, demo |
+| `[TÊN THÀNH VIÊN 2]` | `[MSSV 2]` | Data Engineering & Scraping Developer | Task 1-3 |
+| `[TÊN THÀNH VIÊN 3]` | `[MSSV 3]` | Vector Database & Dense Search Developer | Task 4-5 |
+| `[TÊN THÀNH VIÊN 4]` | `[MSSV 4]` | Sparse Retrieval & Fallback Developer | Task 6-8 |
+| `[TÊN THÀNH VIÊN 5]` | `[MSSV 5]` | Frontend & Generation Developer | Task 10 và Streamlit |
+| `[TÊN THÀNH VIÊN 6]` | `[MSSV 6]` | Evaluation & QA Developer | Golden dataset, RAGAS, A/B, báo cáo |
 
 ## Hướng Dẫn Chạy
 
-```bash
-# Cài đặt dependencies
-pip install -r requirements.txt
-
-# Chạy app
-streamlit run app.py
-# hoặc
-chainlit run app.py
+```powershell
+.\.venv\Scripts\python.exe -X utf8 -m src.task1_collect_legal_docs
+.\.venv\Scripts\python.exe -X utf8 -m src.task2_crawl_news
+.\.venv\Scripts\python.exe -X utf8 -m src.task3_convert_markdown
+.\.venv\Scripts\python.exe -X utf8 -m src.task4_chunking_indexing
+.\.venv\Scripts\streamlit.exe run app.py
 ```
 
----
+## Evaluation
 
-## Lưu ý
+```powershell
+.\.venv\Scripts\python.exe -X utf8 -m group_project.evaluation.eval_pipeline --limit 5
+```
 
-Hãy giữ lại repo này nếu như bạn học track 3 giai đoạn 2, chúng ta sẽ phát triển tiếp dự án lên knowledge graph để khắc phục các câu hỏi hóc búa khi có các câu hỏi khó.
+Evaluation hiện hỗ trợ:
+
+- Config A: Semantic + BM25 + RRF + fallback.
+- Config B: Dense-only.
+- Local proxy metrics khi không có judge key.
+- RAGAS thật khi có Gemini/OpenAI judge.
+
+## Demo Checklist
+
+- Hỏi điều kiện IELTS vào HUST.
+- Hỏi học phí RMIT hoặc VinUni.
+- Hỏi học bổng VinUni.
+- Hỏi điểm chuẩn Công nghệ thông tin.
+- Hỏi follow-up: "Còn SAT thì sao?"
+- Mở source expander và chỉ ra citation, URL, năm tuyển sinh, backend.
+- Chạy evaluation A/B và mở `group_project/evaluation/results.md`.
+
+## Lưu Ý
+
+Không commit `.env`, API key, cache hoặc dữ liệu tạm. Dữ liệu tuyển sinh thay đổi theo năm nên câu trả lời phải luôn đi kèm citation và năm nguồn.

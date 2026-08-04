@@ -61,7 +61,7 @@ Chia nhỏ các công đoạn dữ liệu và kiểm thử chuyên sâu:
 ## 🎯 3. Phân Công Vai Trò & Công Việc Theo Từng Checkpoint
 
 ### 🔹 Checkpoint 0: Setup Môi Trường & Khởi Tạo Project (0:00 – 0:10 | 10 phút)
-* 👑 **Role 1 (Team Leader & RAG Architect)**: Kiểm tra cả nhóm clone thành công repo Starter, khởi tạo repository chung cho nhóm và chia sẻ file `.env` với các API keys cần thiết (`OPENROUTER_API_KEY`).
+* 👑 **Role 1 (Team Leader & RAG Architect)**: Kiểm tra cả nhóm clone thành công repo Starter, khởi tạo repository chung cho nhóm và chia sẻ file `.env` với các API keys cần thiết (`GEMINI_API_KEY`).
 * ⚙️ **Role 2 (Data & Pipeline Specialist / Data Dev)**: Tạo môi trường ảo (`python -m venv .venv`), cài đặt gói phụ thuộc từ `requirements.txt`, kiểm tra import `chromadb` và `sentence_transformers`.
 * 🎨 **Role 3 (Frontend & Chatbot Dev)**: Kiểm tra cài đặt Streamlit bằng lệnh `streamlit run app.py`.
 * 📊 **Role 4 / Role 5 / Role 6 (Evaluation & QA Engineer)**: Kiểm tra sự tồn tại và cài đặt của thư viện đánh giá `ragas` và `datasets`.
@@ -161,5 +161,5 @@ Chia nhỏ các công đoạn dữ liệu và kiểm thử chuyên sâu:
 | **2** | Lỗi trình duyệt khi crawl ở Task 2 | Thư viện `crawl4ai` chưa cài đặt binary Chromium. | Thực thi: `playwright install chromium` |
 | **3** | `UnicodeEncodeError` trên Windows | Console Windows hiển thị ký tự mã hoá cp1252/cp1258. | Thiết lập biến môi trường: `$env:PYTHONIOENCODING="utf-8"` hoặc dùng `python -X utf8`. |
 | **4** | Logic Fallback không kích hoạt ở Task 9 | Sử dụng điểm RRF thay vì điểm Cosine Similarity gốc để so sánh threshold. | Sử dụng điểm Cosine gốc (`dense_results[0]["score"]`) cho ngưỡng `SCORE_THRESHOLD = 0.48`. |
-| **5** | Vượt giới hạn lượt gọi (Rate Limit) ở RAGAS | RAGAS tạo nhiều lượt gọi LLM judge dẫn đến chạm hạn mức của OpenRouter free. | Thu nhỏ số lượng câu hỏi kiểm thử trong `golden_dataset.json` trong quá trình thử nghiệm. |
+| **5** | Vượt giới hạn lượt gọi (Rate Limit) ở RAGAS | RAGAS tạo nhiều lượt gọi LLM judge dẫn đến chạm hạn mức của Gemini free. | Thu nhỏ số lượng câu hỏi kiểm thử trong `golden_dataset.json` trong quá trình thử nghiệm. |
 | **6** | Lẫn lộn dữ liệu giữa các lần chạy | Thay đổi bộ văn bản đầu vào nhưng chưa làm sạch cơ sở dữ liệu cũ. | Xóa thư mục `chroma_db/` và khởi chạy lại `task4_chunking_indexing.py`. |

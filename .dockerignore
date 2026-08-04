@@ -1,0 +1,11 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.git/
+chroma_db/
+pageindex_doc_ids.json
+job.txt
+repomix-output.xml

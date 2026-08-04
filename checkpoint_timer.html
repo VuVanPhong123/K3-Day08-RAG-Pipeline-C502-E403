@@ -608,24 +608,24 @@
             {
               role: "Cả nhóm", name: "Mọi thành viên đều làm giống nhau", badgeClass: "badge-r1",
               goal: "Setup môi trường & khai báo API keys",
-              steps: ["Clone repo starter về máy local", "Tạo venv: python -m venv .venv rồi kích hoạt", "Chạy pip install -r requirements.txt", "Copy .env.example -> .env", "Điền OPENROUTER_API_KEY (bắt buộc, có thể dùng model :free)", "Điền PAGEINDEX_API_KEY (tùy chọn, cho Task 8 fallback)", "Điền JINA_API_KEY (tùy chọn, cho Task 7 cross-encoder rerank)", "Test: streamlit run app.py chạy được là xong"],
-              file: ".env.example -> .env", gotcha: "Chỉ OPENROUTER_API_KEY là bắt buộc; JINA_API_KEY và PAGEINDEX_API_KEY để trống vẫn chạy được (tự fallback về RRF/bỏ qua Task 8)."
+              steps: ["Clone repo starter về máy local", "Tạo venv: python -m venv .venv rồi kích hoạt", "Chạy pip install -r requirements.txt", "Copy .env.example -> .env", "Điền GEMINI_API_KEY (bắt buộc, có thể dùng Gemini model)", "Điền PAGEINDEX_API_KEY (tùy chọn, cho Task 8 fallback)", "Điền JINA_API_KEY (tùy chọn, cho Task 7 cross-encoder rerank)", "Test: streamlit run app.py chạy được là xong"],
+              file: ".env.example -> .env", gotcha: "Chỉ GEMINI_API_KEY là bắt buộc; JINA_API_KEY và PAGEINDEX_API_KEY để trống vẫn chạy được (tự fallback về RRF/bỏ qua Task 8)."
             }
           ],
           5: [
             {
               role: "Cả nhóm", name: "Mọi thành viên đều làm giống nhau", badgeClass: "badge-r1",
               goal: "Setup môi trường & khai báo API keys",
-              steps: ["Clone repo starter về máy local", "Tạo venv: python -m venv .venv rồi kích hoạt", "Chạy pip install -r requirements.txt", "Copy .env.example -> .env", "Điền OPENROUTER_API_KEY (bắt buộc, có thể dùng model :free)", "Điền PAGEINDEX_API_KEY (tùy chọn, cho Task 8 fallback)", "Điền JINA_API_KEY (tùy chọn, cho Task 7 cross-encoder rerank)", "Test: streamlit run app.py chạy được là xong"],
-              file: ".env.example -> .env", gotcha: "Chỉ OPENROUTER_API_KEY là bắt buộc; JINA_API_KEY và PAGEINDEX_API_KEY để trống vẫn chạy được (tự fallback về RRF/bỏ qua Task 8)."
+              steps: ["Clone repo starter về máy local", "Tạo venv: python -m venv .venv rồi kích hoạt", "Chạy pip install -r requirements.txt", "Copy .env.example -> .env", "Điền GEMINI_API_KEY (bắt buộc, có thể dùng Gemini model)", "Điền PAGEINDEX_API_KEY (tùy chọn, cho Task 8 fallback)", "Điền JINA_API_KEY (tùy chọn, cho Task 7 cross-encoder rerank)", "Test: streamlit run app.py chạy được là xong"],
+              file: ".env.example -> .env", gotcha: "Chỉ GEMINI_API_KEY là bắt buộc; JINA_API_KEY và PAGEINDEX_API_KEY để trống vẫn chạy được (tự fallback về RRF/bỏ qua Task 8)."
             }
           ],
           6: [
             {
               role: "Cả nhóm", name: "Mọi thành viên đều làm giống nhau", badgeClass: "badge-r1",
               goal: "Setup môi trường & khai báo API keys",
-              steps: ["Clone repo starter về máy local", "Tạo venv: python -m venv .venv rồi kích hoạt", "Chạy pip install -r requirements.txt", "Copy .env.example -> .env", "Điền OPENROUTER_API_KEY (bắt buộc, có thể dùng model :free)", "Điền PAGEINDEX_API_KEY (tùy chọn, cho Task 8 fallback)", "Điền JINA_API_KEY (tùy chọn, cho Task 7 cross-encoder rerank)", "Test: streamlit run app.py chạy được là xong"],
-              file: ".env.example -> .env", gotcha: "Chỉ OPENROUTER_API_KEY là bắt buộc; JINA_API_KEY và PAGEINDEX_API_KEY để trống vẫn chạy được (tự fallback về RRF/bỏ qua Task 8)."
+              steps: ["Clone repo starter về máy local", "Tạo venv: python -m venv .venv rồi kích hoạt", "Chạy pip install -r requirements.txt", "Copy .env.example -> .env", "Điền GEMINI_API_KEY (bắt buộc, có thể dùng Gemini model)", "Điền PAGEINDEX_API_KEY (tùy chọn, cho Task 8 fallback)", "Điền JINA_API_KEY (tùy chọn, cho Task 7 cross-encoder rerank)", "Test: streamlit run app.py chạy được là xong"],
+              file: ".env.example -> .env", gotcha: "Chỉ GEMINI_API_KEY là bắt buộc; JINA_API_KEY và PAGEINDEX_API_KEY để trống vẫn chạy được (tự fallback về RRF/bỏ qua Task 8)."
             }
           ]
         }
@@ -972,8 +972,8 @@
             {
               role: "Role 3", name: "Frontend & Chatbot Dev", badgeClass: "badge-r3",
               goal: "Task 10 — Reordering & LLM Generation có Citation",
-              steps: ["Xếp lại thứ tự chunks tránh lost-in-the-middle: front + back[::-1]", "Gắn nhãn source cho từng chunk trong context", "Gọi OpenRouter (inclusionai/ling-3.0-flash:free)", "SYSTEM_PROMPT yêu cầu bắt buộc trích dẫn [Source]"],
-              file: "src/task10_generation.py", gotcha: "Liu et al. 2023: LLM chỉ nhớ đầu & cuối, quên giữa. OpenRouter free tier giới hạn 50 req/ngày -> nếu bị 429, đổi sang OPENAI_API_KEY hoặc GEMINI_API_KEY nếu có."
+              steps: ["Xếp lại thứ tự chunks tránh lost-in-the-middle: front + back[::-1]", "Gắn nhãn source cho từng chunk trong context", "Gọi Gemini (inclusionai/ling-3.0-flash:free)", "SYSTEM_PROMPT yêu cầu bắt buộc trích dẫn [Source]"],
+              file: "src/task10_generation.py", gotcha: "Liu et al. 2023: LLM chỉ nhớ đầu & cuối, quên giữa. Gemini free tier giới hạn 50 req/ngày -> nếu bị 429, đổi sang OPENAI_API_KEY hoặc GEMINI_API_KEY nếu có."
             },
             {
               role: "Role 4", name: "Evaluation & QA Engineer", badgeClass: "badge-r4",
@@ -1004,8 +1004,8 @@
             {
               role: "Role 4", name: "Frontend & Chatbot Dev", badgeClass: "badge-r4",
               goal: "Task 10 — Reordering & LLM Citation Generation",
-              steps: ["Viết reorder_for_llm() & format_context()", "Gọi OpenRouter LLM sinh câu trả lời"],
-              file: "src/task10_generation.py", gotcha: "Temperature=0.3, Top_P=0.9. OpenRouter free tier giới hạn 50 req/ngày -> nếu bị 429, đổi sang OPENAI_API_KEY hoặc GEMINI_API_KEY nếu có."
+              steps: ["Viết reorder_for_llm() & format_context()", "Gọi Gemini LLM sinh câu trả lời"],
+              file: "src/task10_generation.py", gotcha: "Temperature=0.3, Top_P=0.9. Gemini free tier giới hạn 50 req/ngày -> nếu bị 429, đổi sang OPENAI_API_KEY hoặc GEMINI_API_KEY nếu có."
             },
             {
               role: "Role 5", name: "Evaluation & QA Engineer", badgeClass: "badge-r5",
@@ -1042,7 +1042,7 @@
             {
               role: "Role 5", name: "Frontend UI Dev", badgeClass: "badge-r5",
               goal: "Task 10 — Document Reordering & LLM Generation",
-              steps: ["Thực thi reorder_for_llm()", "Gửi prompt tới OpenRouter sinh câu trả lời"],
+              steps: ["Thực thi reorder_for_llm()", "Gửi prompt tới Gemini sinh câu trả lời"],
               file: "src/task10_generation.py", gotcha: "Model inclusionai/ling-3.0-flash:free. Free tier giới hạn 50 req/ngày -> nếu bị 429, đổi sang OPENAI_API_KEY hoặc GEMINI_API_KEY nếu có."
             },
             {

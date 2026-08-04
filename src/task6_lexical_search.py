@@ -1,83 +1,89 @@
-"""
-Task 6 — Lexical Search Module (BM25).
+"""Task 6 - Unicode BM25 and TF-IDF lexical retrieval."""
 
-Mặc định sử dụng BM25. Nếu dùng phương pháp khác (TF-IDF, Elasticsearch,
-Weaviate BM25 built-in), hãy giải thích cơ chế trong buổi demo → +5 bonus.
+from __future__ import annotations
 
-Cài đặt:
-    pip install rank-bm25
+from functools import lru_cache
 
-BM25 hoạt động thế nào:
-    - Term Frequency (TF): từ xuất hiện nhiều trong document → điểm cao
-    - Inverse Document Frequency (IDF): từ hiếm → quan trọng hơn
-    - Document length normalization: document dài không bị ưu tiên quá mức
-    - Formula: score(q,d) = Σ IDF(qi) * (tf(qi,d) * (k1+1)) / (tf(qi,d) + k1*(1-b+b*|d|/avgdl))
-    - k1=1.5 (term saturation), b=0.75 (length normalization)
-"""
+import numpy as np
+from rank_bm25 import BM25Okapi
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-from pathlib import Path
-
-# TODO: Load corpus từ data/standardized/ hoặc từ vector store
-CORPUS: list[dict] = []  # List of {'content': str, 'metadata': dict}
+from .common import tokenize
+from .task4_chunking_indexing import chunk_documents, corpus_fingerprint, load_documents
 
 
-def build_bm25_index(corpus: list[dict]):
-    """
-    Xây dựng BM25 index từ corpus.
+def _load_chunk_corpus() -> list[dict]:
+    return chunk_documents(load_documents())
 
-    Args:
-        corpus: List of {'content': str, 'metadata': dict}
-    """
-    # TODO: Implement BM25 index
-    #
-    # from rank_bm25 import BM25Okapi
-    #
-    # # Tokenize - có thể đơn giản split(), hoặc dùng underthesea cho tiếng Việt
-    # tokenized_corpus = [doc["content"].lower().split() for doc in corpus]
-    # bm25 = BM25Okapi(tokenized_corpus)
-    # return bm25
-    raise NotImplementedError("Implement build_bm25_index")
+
+@lru_cache(maxsize=4)
+def _cached_indexes(fingerprint: str):
+    corpus = _load_chunk_corpus()
+    tokenized = [tokenize(item["content"]) for item in corpus]
+    bm25 = BM25Okapi(tokenized) if tokenized else None
+    tfidf = TfidfVectorizer(
+        tokenizer=tokenize,
+        token_pattern=None,
+        lowercase=False,
+        ngram_range=(1, 2),
+        min_df=1,
+    )
+    matrix = tfidf.fit_transform([item["content"] for item in corpus]) if corpus else None
+    return corpus, bm25, tfidf, matrix
+
+
+def build_bm25_index(corpus: list[dict] | None = None):
+    data = corpus if corpus is not None else _load_chunk_corpus()
+    tokenized = [tokenize(item["content"]) for item in data]
+    return BM25Okapi(tokenized) if tokenized else None
 
 
 def lexical_search(query: str, top_k: int = 10) -> list[dict]:
-    """
-    Tìm kiếm từ khóa sử dụng BM25.
+    if not isinstance(query, str) or not query.strip():
+        return []
+    top_k = max(1, min(int(top_k), 50))
+    corpus, bm25, _, _ = _cached_indexes(corpus_fingerprint())
+    if not corpus or bm25 is None:
+        return []
+    scores = bm25.get_scores(tokenize(query))
+    indices = np.argsort(scores)[::-1][:top_k]
+    results: list[dict] = []
+    for idx in indices:
+        score = float(scores[idx])
+        if score <= 0:
+            continue
+        item = corpus[int(idx)]
+        results.append(
+            {
+                "content": item["content"],
+                "score": score,
+                "metadata": dict(item["metadata"]),
+            }
+        )
+    results.sort(key=lambda item: item["score"], reverse=True)
+    return results[:top_k]
 
-    Args:
-        query: Câu truy vấn
-        top_k: Số lượng kết quả tối đa
 
-    Returns:
-        List of {
-            'content': str,
-            'score': float,      # BM25 score
-            'metadata': dict
-        }
-        Sorted by score descending.
-    """
-    # TODO: Implement lexical search
-    #
-    # tokenized_query = query.lower().split()
-    # scores = bm25.get_scores(tokenized_query)
-    #
-    # # Get top_k indices
-    # import numpy as np
-    # top_indices = np.argsort(scores)[::-1][:top_k]
-    #
-    # results = []
-    # for idx in top_indices:
-    #     if scores[idx] > 0:
-    #         results.append({
-    #             "content": CORPUS[idx]["content"],
-    #             "score": float(scores[idx]),
-    #             "metadata": CORPUS[idx]["metadata"]
-    #         })
-    # return results
-    raise NotImplementedError("Implement lexical_search")
+def tfidf_search(query: str, top_k: int = 10) -> list[dict]:
+    if not isinstance(query, str) or not query.strip():
+        return []
+    top_k = max(1, min(int(top_k), 50))
+    corpus, _, vectorizer, matrix = _cached_indexes(corpus_fingerprint())
+    if not corpus or matrix is None:
+        return []
+    query_vector = vectorizer.transform([query])
+    scores = (matrix @ query_vector.T).toarray().ravel()
+    indices = np.argsort(scores)[::-1][:top_k]
+    results: list[dict] = []
+    for idx in indices:
+        score = float(scores[idx])
+        if score <= 0:
+            continue
+        item = corpus[int(idx)]
+        results.append({"content": item["content"], "score": score, "metadata": dict(item["metadata"])})
+    return results[:top_k]
 
 
 if __name__ == "__main__":
-    # Test
-    results = lexical_search("tuition fee payment methods", top_k=5)
-    for r in results:
-        print(f"[{r['score']:.3f}] {r['content'][:100]}...")
+    for item in lexical_search("IELTS xét tuyển Bách khoa Hà Nội 2026", top_k=5):
+        print(f"[{item['score']:.3f}] {item['metadata'].get('source')} {item['content'][:120]}...")

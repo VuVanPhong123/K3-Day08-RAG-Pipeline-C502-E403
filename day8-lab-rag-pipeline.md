@@ -11,10 +11,10 @@ format: "steps"
 day: "8"
 preparationTipIds: ["huong-dan-cai-vs-code-va-git", "huong-dan-cai-python-va-cau-hinh-python-trong-vs-code", "thiet-lap-venv-voi-pip-va-uv", "huong-dan-tai-bai-lab"]
 level: "intermediate"
-prerequisites: ["Đã hoàn thành Lab 07 (chunking, vector store, RAG agent cơ bản)", "Biết dùng requests/HTTP client và đọc JSON", "Đã có tài khoản OpenRouter (hoặc OpenAI) và PageIndex"]
+prerequisites: ["Đã hoàn thành Lab 07 (chunking, vector store, RAG agent cơ bản)", "Biết dùng requests/HTTP client và đọc JSON", "Đã có tài khoản Gemini (hoặc OpenAI) và PageIndex"]
 outcomes: ["Xây dựng pipeline thu thập → convert → chunk → index → retrieve → generate hoàn chỉnh", "Kết hợp semantic search (dense) và BM25 (sparse) bằng Reciprocal Rank Fusion", "Nhận biết khi nào retrieval fusion score KHÔNG phản ánh độ liên quan thật, và sửa đúng chỗ", "Triển khai fallback sang vectorless RAG (PageIndex) khi hybrid search yếu", "Sinh câu trả lời có citation, chống lost-in-the-middle bằng document reordering"]
 supportedOs: ["Windows", "macOS", "Linux"]
-requiredTools: ["Python 3.10+ (khuyến nghị 3.11)", "pip", "Git + tài khoản GitHub", "Tài khoản OpenRouter (API key)", "Tài khoản PageIndex (API key, tùy chọn)"]
+requiredTools: ["Python 3.10+ (khuyến nghị 3.11)", "pip", "Git + tài khoản GitHub", "Tài khoản Gemini (API key)", "Tài khoản PageIndex (API key, tùy chọn)"]
 commonErrors: ["Lỗi MissingDependencyException khi convert PDF do quên cài markitdown[pdf]", "Lỗi Executable doesn't exist do cài crawl4ai nhưng chưa gõ playwright install chromium", "Logic Fallback không bao giờ chạy do so nhầm điểm RRF (~0.016) thay vì điểm Cosine gốc (<0.48)", "Lỗi UnicodeEncodeError khi print tiếng Việt trên Windows console do thiếu PYTHONIOENCODING=utf-8", "Dữ liệu cũ và mới lẫn lộn do không xoá thư mục chroma_db/ cũ trước khi index lại", "Chạm Rate Limit (429) khi chạy RAGAS do gọi LLM quá nhiều lần liên tục"]
 requiresSubmission: true
 description: "Học viên xây dựng RAG pipeline 10 bước end-to-end: thu thập dữ liệu domain thật, chunking + indexing vào ChromaDB, hybrid retrieval (semantic + BM25 + RRF), vectorless fallback (PageIndex), và generation có citation chống lost-in-the-middle."
@@ -81,7 +81,7 @@ Chia nhỏ các công đoạn dữ liệu và kiểm thử chuyên sâu:
 ## 🎯 2. Phân Công Vai Trò & Công Việc Theo Từng Checkpoint
 
 ### 🔹 Checkpoint 0: Setup Môi Trường & Khởi Tạo Project (0:00 – 0:10)
-* 👑 **Role 1 (Team Leader & RAG Architect)**: Kiểm tra cả nhóm clone thành công repo Starter, khởi tạo repository chung cho nhóm và chia sẻ file `.env` với các API keys cần thiết (`OPENROUTER_API_KEY`).
+* 👑 **Role 1 (Team Leader & RAG Architect)**: Kiểm tra cả nhóm clone thành công repo Starter, khởi tạo repository chung cho nhóm và chia sẻ file `.env` với các API keys cần thiết (`GEMINI_API_KEY`).
 * ⚙️ **Role 2 (Data & Pipeline Specialist / Data Dev)**: Tạo môi trường ảo (`python -m venv .venv`), cài đặt gói phụ thuộc từ `requirements.txt`, kiểm tra import `chromadb` và `sentence_transformers`.
 * 🎨 **Role 3 (Frontend & Chatbot Dev)**: Kiểm tra cài đặt Streamlit bằng lệnh `streamlit run app.py`.
 * 📊 **Role 4 / Role 5 / Role 6 (Evaluation & QA Engineer)**: Kiểm tra sự tồn tại và cài đặt của thư viện đánh giá `ragas` và `datasets`.
@@ -260,4 +260,4 @@ Bảng dưới đây liệt kê các lỗi thực tế bạn sẽ thấy trên m
 | **`UnicodeEncodeError: 'charmap' codec can't encode...`** | Do cửa sổ Console của Windows đang dùng bảng mã cũ (cp1252/cp1258). | Gõ lệnh: `$env:PYTHONIOENCODING="utf-8"` hoặc dùng `python -X utf8`. |
 | **Hệ thống KHÔNG BAO GIỜ tự chuyển sang PageIndex Fallback** | Do bạn đem ngưỡng `0.48` so sánh với điểm RRF (luôn ~0.016) thay vì điểm Cosine gốc. | Sửa trong `task9`: Lấy `dense_results[0]['score'] < 0.48` làm điều kiện. |
 | **Kết quả tìm kiếm trả về các đoạn văn rác từ bài cũ** | Do bạn thay đổi file dữ liệu nhưng chưa làm sạch cơ sở dữ liệu cũ trong máy. | Xoá thư mục `chroma_db/` bằng tay hoặc gõ: `Remove-Item -Recurse -Force chroma_db` rồi chạy lại Task 4. |
-| **Báo lỗi Rate Limit `429 Too Many Requests` khi chạy RAGAS** | Do thư viện RAGAS gọi LLM quá nhiều lần liên tục chạm hạn mức OpenRouter free (50 req/ngày). | Tạm thời giảm số lượng câu hỏi trong `golden_dataset.json` xuống 5 câu khi chạy thử. |
+| **Báo lỗi Rate Limit `429 Too Many Requests` khi chạy RAGAS** | Do thư viện RAGAS gọi LLM quá nhiều lần liên tục chạm hạn mức Gemini free (50 req/ngày). | Tạm thời giảm số lượng câu hỏi trong `golden_dataset.json` xuống 5 câu khi chạy thử. |
