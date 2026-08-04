@@ -4,6 +4,8 @@
 - Source: https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026
 - Admission year: 2026
 - Document type: admission_quota
+- Page type: detail_page
+- Primary evidence: True
 - Retrieved at: 2026-08-04T11:24:22+07:00
 
 ---
@@ -79,153 +81,153 @@ Năm 2026, ĐHBK Hà Nội dự kiến tuyển sinh 68 chương trình đào t�
 
 **A. CHƯƠNG TRÌNH CHUẨN**
 
-1 | Kỹ thuật Sinh học | 160 | BF1 | Ö | Ö | Ö
+1 | Kỹ thuật Sinh học | 160 | BF1 | Có | Có | Có
 
-2 | Kỹ thuật Thực phẩm | 360 | BF2 | Ö | Ö | Ö
+2 | Kỹ thuật Thực phẩm | 360 | BF2 | Có | Có | Có
 
-3 | Kỹ thuật Hóa học | 680 | CH1 | Ö | Ö | Ö
+3 | Kỹ thuật Hóa học | 680 | CH1 | Có | Có | Có
 
-4 | Hóa học | 160 | CH2 | Ö | Ö | Ö
+4 | Hóa học | 160 | CH2 | Có | Có | Có
 
-5 | Công nghệ Giáo dục | 120 | ED2 | Ö | Ö | Ö
+5 | Công nghệ Giáo dục | 120 | ED2 | Có | Có | Có
 
-6 | Quản lý Giáo dục | 60 | ED3 | Ö | Ö | Ö
+6 | Quản lý Giáo dục | 60 | ED3 | Có | Có | Có
 
-7 | Tâm lý học công nghiệp và tổ chức (mới) | 40 | ED5 | Ö | Ö | Ö
+7 | Tâm lý học công nghiệp và tổ chức (mới) | 40 | ED5 | Có | Có | Có
 
-8 | Kỹ thuật điện | 240 | EE1 | Ö | Ö | Ö
+8 | Kỹ thuật điện | 240 | EE1 | Có | Có | Có
 
-9 | Kỹ thuật điều khiển & Tự động hóa | 500 | EE2 | Ö | Ö | Ö
+9 | Kỹ thuật điều khiển & Tự động hóa | 500 | EE2 | Có | Có | Có
 
-10 | Quản lý Năng lượng | 80 | EM1 | Ö | Ö | Ö
+10 | Quản lý Năng lượng | 80 | EM1 | Có | Có | Có
 
-11 | Quản lý Công nghiệp | 100 | EM2 | Ö | Ö | Ö
+11 | Quản lý Công nghiệp | 100 | EM2 | Có | Có | Có
 
-12 | Quản trị Kinh doanh | 120 | EM3 | Ö | Ö | Ö
+12 | Quản trị Kinh doanh | 120 | EM3 | Có | Có | Có
 
-13 | Tài chính-Ngân hàng | 100 | EM5 | Ö | Ö | Ö
+13 | Tài chính-Ngân hàng | 100 | EM5 | Có | Có | Có
 
-14 | Kỹ thuật Điện tử-Viễn thông | 480 | ET1 | Ö | Ö | Ö
+14 | Kỹ thuật Điện tử-Viễn thông | 480 | ET1 | Có | Có | Có
 
-15 | Kỹ thuật Y sinh | 100 | ET2 | Ö | Ö | Ö
+15 | Kỹ thuật Y sinh | 100 | ET2 | Có | Có | Có
 
-16 | Kỹ thuật Môi trường | 160 | EV1 | Ö | Ö | Ö
+16 | Kỹ thuật Môi trường | 160 | EV1 | Có | Có | Có
 
-17 | Quản lý Tài nguyên và Môi trường | 120 | EV2 | Ö | Ö | Ö
+17 | Quản lý Tài nguyên và Môi trường | 120 | EV2 | Có | Có | Có
 
-18 | Tiếng Anh KHKT và Công nghệ | 210 | FL1 | Ö | Ö | Ö
+18 | Tiếng Anh KHKT và Công nghệ | 210 | FL1 | Có | Có | Có
 
-19 | Tiếng Trung KH&CN | 80 | FL3 | Ö | Ö | Ö
+19 | Tiếng Trung KH&CN | 80 | FL3 | Có | Có | Có
 
-20 | Tiếng Hàn KH&CN (mới) | 40 | FL4 | Ö | Ö | Ö
+20 | Tiếng Hàn KH&CN (mới) | 40 | FL4 | Có | Có | Có
 
-21 | Kỹ thuật Nhiệt | 250 | HE1 | Ö | Ö | Ö
+21 | Kỹ thuật Nhiệt | 250 | HE1 | Có | Có | Có
 
-22 | CNTT: Khoa học Máy tính | 300 | IT1 | Ö | Ö | Ö
+22 | CNTT: Khoa học Máy tính | 300 | IT1 | Có | Có | Có
 
-23 | CNTT: Kỹ thuật Máy tính | 200 | IT2 | Ö | Ö | Ö
+23 | CNTT: Kỹ thuật Máy tính | 200 | IT2 | Có | Có | Có
 
-24 | Kỹ thuật Cơ điện tử | 300 | ME1 | Ö | Ö | Ö
+24 | Kỹ thuật Cơ điện tử | 300 | ME1 | Có | Có | Có
 
-25 | Kỹ thuật Cơ khí | 560 | ME2 | Ö | Ö | Ö
+25 | Kỹ thuật Cơ khí | 560 | ME2 | Có | Có | Có
 
-26 | Toán-Tin | 160 | MI1 | Ö | Ö | Ö
+26 | Toán-Tin | 160 | MI1 | Có | Có | Có
 
-27 | Hệ thống Thông tin quản lý | 80 | MI2 | Ö | Ö | Ö
+27 | Hệ thống Thông tin quản lý | 80 | MI2 | Có | Có | Có
 
-28 | Kỹ thuật Vật liệu | 280 | MS1 | Ö | Ö | Ö
+28 | Kỹ thuật Vật liệu | 280 | MS1 | Có | Có | Có
 
-29 | Kỹ thuật Vi điện tử và Công nghệ nano | 180 | MS2 | Ö | Ö | Ö
+29 | Kỹ thuật Vi điện tử và Công nghệ nano | 180 | MS2 | Có | Có | Có
 
-30 | Công nghệ vật liệu Polyme và Compozit | 80 | MS3 | Ö | Ö | Ö
+30 | Công nghệ vật liệu Polyme và Compozit | 80 | MS3 | Có | Có | Có
 
-31 | Kỹ thuật In | 60 | MS5 | Ö | Ö | Ö
+31 | Kỹ thuật In | 60 | MS5 | Có | Có | Có
 
-32 | Vật lý Kỹ thuật | 200 | PH1 | Ö | Ö | Ö
+32 | Vật lý Kỹ thuật | 200 | PH1 | Có | Có | Có
 
-33 | Kỹ thuật Hạt nhân | 40 | PH2 | Ö | Ö | Ö
+33 | Kỹ thuật Hạt nhân | 40 | PH2 | Có | Có | Có
 
-34 | Vật lý Y khoa | 60 | PH3 | Ö | Ö | Ö
+34 | Vật lý Y khoa | 60 | PH3 | Có | Có | Có
 
-35 | Kỹ thuật Ô tô | 200 | TE1 | Ö | Ö | Ö
+35 | Kỹ thuật Ô tô | 200 | TE1 | Có | Có | Có
 
-36 | Kỹ thuật Cơ khí động lực | 120 | TE2 | Ö | Ö | Ö
+36 | Kỹ thuật Cơ khí động lực | 120 | TE2 | Có | Có | Có
 
-37 | Kỹ thuật Hàng không | 80 | TE3 | Ö | Ö | Ö
+37 | Kỹ thuật Hàng không | 80 | TE3 | Có | Có | Có
 
-38 | Công nghệ DệtMay | 240 | TX1 | Ö | Ö | Ö
+38 | Công nghệ DệtMay | 240 | TX1 | Có | Có | Có
 
 **B. CHƯƠNG TRÌNH****CHẤT LƯỢNG CAO****- ELITECH****(CỦA ĐHBK HÀ NỘI)**
 
 **B1. Chương trình tiên****tiến****giảng dạy bằng tiếng Anh**
 
-39 | Kỹ thuật Thực phẩm | 60 | BF-E12 | Ö | Ö | Ö
+39 | Kỹ thuật Thực phẩm | 60 | BF-E12 | Có | Có | Có
 
-40 | Kỹ thuật sinh học | 60 | BF-E19 | Ö | Ö | Ö
+40 | Kỹ thuật sinh học | 60 | BF-E19 | Có | Có | Có
 
-41 | Kỹ thuật Hóa dược | 100 | CH-E11 | Ö | Ö | Ö
+41 | Kỹ thuật Hóa dược | 100 | CH-E11 | Có | Có | Có
 
-42 | Hóa học Mỹ phẩm (mới) | 40 | CH-E20 | Ö | Ö | Ö
+42 | Hóa học Mỹ phẩm (mới) | 40 | CH-E20 | Có | Có | Có
 
-43 | Kỹ thuật điều khiển-Tự động hóa | 140 | EE-E8 | Ö | Ö | Ö
+43 | Kỹ thuật điều khiển-Tự động hóa | 140 | EE-E8 | Có | Có | Có
 
-44 | Hệ thống điện và năng lượng tái tạo | 60 | EE-E18 | Ö | Ö | Ö
+44 | Hệ thống điện và năng lượng tái tạo | 60 | EE-E18 | Có | Có | Có
 
-45 | Phân tích Kinh doanh | 140 | EM-E13 | Ö | Ö | Ö
+45 | Phân tích Kinh doanh | 140 | EM-E13 | Có | Có | Có
 
-46 | Logistics và Quản lý chuỗi cung ứng | 140 | EM-E14 | Ö | Ö | Ö
+46 | Logistics và Quản lý chuỗi cung ứng | 140 | EM-E14 | Có | Có | Có
 
-47 | Kế toán (mới) | 80 | EM-E17 | Ö | Ö | Ö
+47 | Kế toán (mới) | 80 | EM-E17 | Có | Có | Có
 
-48 | Truyền thông số và Kỹ thuật đa phương tiện | 60 | ET-E16 | Ö | Ö | Ö
+48 | Truyền thông số và Kỹ thuật đa phương tiện | 60 | ET-E16 | Có | Có | Có
 
-49 | Kỹ thuật Điện tử - Viễn thông | 120 | ET-E4 | Ö | Ö | Ö
+49 | Kỹ thuật Điện tử - Viễn thông | 120 | ET-E4 | Có | Có | Có
 
-50 | Kỹ thuật Y sinh | 40 | ET-E5 | Ö | Ö | Ö
+50 | Kỹ thuật Y sinh | 40 | ET-E5 | Có | Có | Có
 
-51 | Công nghệ Thông tin Global ICT | 160 | IT-E7 | Ö | Ö | Ö
+51 | Công nghệ Thông tin Global ICT | 160 | IT-E7 | Có | Có | Có
 
-52 | Khoa học Dữ liệu và Trí tuệ nhân tạo | 160 | IT-E10 | Ö | Ö | Ö
+52 | Khoa học Dữ liệu và Trí tuệ nhân tạo | 160 | IT-E10 | Có | Có | Có
 
-53 | An toàn không gian số - Cyber Security | 40 | IT-E15 | Ö | Ö | Ö
+53 | An toàn không gian số - Cyber Security | 40 | IT-E15 | Có | Có | Có
 
-54 | Kỹ thuật Cơ điện tử | 180 | ME-E1 | Ö | Ö | Ö
+54 | Kỹ thuật Cơ điện tử | 180 | ME-E1 | Có | Có | Có
 
-55 | Khoa học tính toán cho các hệ thống thông minh (mới) | 40 | MI-E22 | Ö | Ö | Ö
+55 | Khoa học tính toán cho các hệ thống thông minh (mới) | 40 | MI-E22 | Có | Có | Có
 
-56 | Khoa học và Kỹ thuật Vật liệu | 60 | MS-E3 | Ö | Ö | Ö
+56 | Khoa học và Kỹ thuật Vật liệu | 60 | MS-E3 | Có | Có | Có
 
-57 | Kỹ thuật Ô tô | 100 | TE-E2 | Ö | Ö | Ö
+57 | Kỹ thuật Ô tô | 100 | TE-E2 | Có | Có | Có
 
 **B2. Chương trình có tăng cường ngoại ngữ**
 
-58 | Hệ thống nhúng thông minh và IoT (tăng cường tiếng Nhật) | 80 | ET-E9 | Ö | Ö | Ö
+58 | Hệ thống nhúng thông minh và IoT (tăng cường tiếng Nhật) | 80 | ET-E9 | Có | Có | Có
 
-59 | Công nghệ Thông tin Việt - Nhật (tăng cường tiếng Nhật) | 160 | IT-E6 | Ö | Ö | Ö
+59 | Công nghệ Thông tin Việt - Nhật (tăng cường tiếng Nhật) | 160 | IT-E6 | Có | Có | Có
 
-60 | Công nghệ Thông tin Việt-Pháp (tăng cường tiếng Pháp) | 40 | IT-EP | Ö | Ö | Ö
+60 | Công nghệ Thông tin Việt-Pháp (tăng cường tiếng Pháp) | 40 | IT-EP | Có | Có | Có
 
 **B3****.****Chương trình có chuẩn đầu ra ngoại ngữ khác**
 
-61 | Điện tử - Viễn thông - ĐH Leibniz Hannover (CHLB Đức) | 40 | ET-LUH | Ö | Ö | Ö
+61 | Điện tử - Viễn thông - ĐH Leibniz Hannover (CHLB Đức) | 40 | ET-LUH | Có | Có | Có
 
-62 | Cơ điện tử - hợp tác với ĐH Leibniz Hannover (CHLB Đức) | 50 | ME-LUH | Ö | Ö | Ö
+62 | Cơ điện tử - hợp tác với ĐH Leibniz Hannover (CHLB Đức) | 50 | ME-LUH | Có | Có | Có
 
-63 | Cơ điện tử - hợp tác với ĐHCN Nagaoka (Nhật Bản) | 100 | ME-NUT | Ö | Ö | Ö
+63 | Cơ điện tử - hợp tác với ĐHCN Nagaoka (Nhật Bản) | 100 | ME-NUT | Có | Có | Có
 
-64 | Cơ khí Chế tạo máy - hợp tác với trường ĐH Griffith (Úc) | 40 | ME-GU | Ö | Ö | Ö
+64 | Cơ khí Chế tạo máy - hợp tác với trường ĐH Griffith (Úc) | 40 | ME-GU | Có | Có | Có
 
 **C. CHƯƠNG TRÌNH VIỆT****- PHÁP (****PFIEV****)**
 
-65 | Tin học công nghiệp và Tự động hóa | 40 | EE-EP | Ö | Ö | Ö
+65 | Tin học công nghiệp và Tự động hóa | 40 | EE-EP | Có | Có | Có
 
-66 | Cơ khí Hàng không | 40 | TE-EP | Ö | Ö | Ö
+66 | Cơ khí Hàng không | 40 | TE-EP | Có | Có | Có
 
 **D. CHƯƠNG TRÌNH LIÊN KẾT ĐÀO TẠO QUỐC TẾ**
 
-67 | Khoa học Máy tính - ĐH Troy (Hoa Kỳ) (do ĐH Troy cấp bằng) | 120 | TROY-IT | Ö | Ö | Ö
+67 | Khoa học Máy tính - ĐH Troy (Hoa Kỳ) (do ĐH Troy cấp bằng) | 120 | TROY-IT | Có | Có | Có
 
-68 | Tiếng Anh chuyên nghiệp quốc tế (do ĐHBK Hà Nội và ĐH Plymouth Marjon-Vương quốc Anh cấp bằng) | 90 | FL2 | Ö | Ö | Ö
+68 | Tiếng Anh chuyên nghiệp quốc tế (do ĐHBK Hà Nội và ĐH Plymouth Marjon-Vương quốc Anh cấp bằng) | 90 | FL2 | Có | Có | Có
 
 **Tổng****chỉ tiêu:** | **9.880**
 

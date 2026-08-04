@@ -4,7 +4,7 @@
 - Source: https://www.rmit.edu.vn/assets/vn/en/assets-for-production/documents/pdfs/study-at-rmit/international-students/international-student-guide-2026.pdf
 - Admission year: 2026
 - Document type: admission_guide
-- Retrieved at: 2026-08-04T10:27:15+07:00
+- Retrieved at: 2026-08-04T12:22:53+07:00
 
 ---
 RMIT Vietnam

@@ -4,6 +4,8 @@
 - Source: https://www.rmit.edu.vn/study-at-rmit/tuition-fees
 - Admission year: 2026
 - Document type: tuition_fee
+- Page type: mixed_page
+- Primary evidence: True
 - Retrieved at: 2026-08-04T11:24:25+07:00
 
 ---

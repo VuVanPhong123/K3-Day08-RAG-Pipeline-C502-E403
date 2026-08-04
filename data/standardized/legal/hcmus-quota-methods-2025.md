@@ -4,7 +4,7 @@
 - Source: https://tuyensinh.hcmus.edu.vn/wp-content/uploads/2025/06/Phu-luc-2.6-Chi-tieu-va-phuong-thuc-xet-tuyen-1.pdf
 - Admission year: 2025
 - Document type: admission_quota
-- Retrieved at: 2026-08-04T10:27:14+07:00
+- Retrieved at: 2026-08-04T12:22:53+07:00
 
 ---
 Phụ lục 2.6

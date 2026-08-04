@@ -4,6 +4,8 @@
 - Source: https://ts.hust.edu.vn/tin-tuc/quy-che-tuyen-sinh-dai-hoc-nam-2026
 - Admission year: 2026
 - Document type: admission_method
+- Page type: document_pointer
+- Primary evidence: False
 - Retrieved at: 2026-08-04T11:24:23+07:00
 
 ---

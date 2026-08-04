@@ -20,16 +20,16 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.task10_generation import GEMINI_MODEL, OPENAI_MODEL, generate_with_citation  # noqa: E402
-from src.task4_chunking_indexing import EMBEDDING_MODEL, ensure_index_ready, get_collection  # noqa: E402
+from src.task4_chunking_indexing import embedding_model_actual, embedding_model_configured, ensure_index_ready, get_collection  # noqa: E402
 from src.task8_pageindex_vectorless import pageindex_backend_status  # noqa: E402
 
 
 SUGGESTIONS = [
-    "Điều kiện xét tuyển bằng IELTS vào Đại học Bách khoa Hà Nội là gì?",
-    "Học phí chương trình đại học tại RMIT Việt Nam là bao nhiêu?",
+    "Điều kiện IELTS vào HUST năm 2026 là gì?",
+    "HUST chấp nhận những chứng chỉ quốc tế nào?",
+    "Chỉ tiêu ngành Khoa học Máy tính HUST năm 2026 là bao nhiêu?",
+    "Học phí Computer Science tại RMIT năm 2026 là bao nhiêu?",
     "VinUni có những chương trình học bổng nào?",
-    "Chỉ tiêu tuyển sinh của Đại học Bách khoa Hà Nội năm 2026 là bao nhiêu?",
-    "Điểm chuẩn ngành Công nghệ thông tin của HUST gần đây như thế nào?",
 ]
 
 
@@ -115,7 +115,9 @@ def health() -> dict[str, Any]:
         "chunk_count": chunk_count,
         "generator": _generator_status(),
         "pageindex_backend": pageindex_backend_status(),
-        "embedding_backend": EMBEDDING_MODEL,
+        "embedding_backend": embedding_model_actual(),
+        "embedding_backend_configured": embedding_model_configured(),
+        "embedding_backend_actual": embedding_model_actual(),
     }
 
 

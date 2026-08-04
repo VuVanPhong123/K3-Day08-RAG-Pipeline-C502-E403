@@ -9,9 +9,11 @@ from .task5_semantic_search import semantic_search
 from .task6_lexical_search import lexical_search
 from .task7_reranking import rerank, rerank_rrf
 from .task8_pageindex_vectorless import pageindex_search
-from .task4_chunking_indexing import chunk_documents, load_documents
+from .task4_chunking_indexing import chunk_documents, embedding_model_actual, load_documents
 
-SCORE_THRESHOLD = 0.12
+BGE_M3_THRESHOLD = 0.48
+LOCAL_HASH_THRESHOLD = 0.12
+SCORE_THRESHOLD = LOCAL_HASH_THRESHOLD
 DEFAULT_TOP_K = 5
 RERANK_METHOD = "rrf"
 
@@ -38,6 +40,13 @@ def _query_targets(query: str) -> list[str]:
     return targets
 
 
+def active_score_threshold() -> float:
+    actual = embedding_model_actual().lower()
+    if "bge-m3" in actual or "baai" in actual:
+        return BGE_M3_THRESHOLD
+    return LOCAL_HASH_THRESHOLD
+
+
 def _apply_institution_boost(query: str, candidates: list[dict]) -> list[dict]:
     targets = _query_targets(query)
     if not targets:
@@ -54,8 +63,51 @@ def _apply_institution_boost(query: str, candidates: list[dict]) -> list[dict]:
         matched = any(any(_fold(alias) in meta_text for alias in INSTITUTION_ALIASES[target]) for target in targets)
         item = dict(item)
         item["metadata"] = dict(meta)
-        item["score"] = float(item.get("score", 0.0)) + (10.0 if matched else -2.0)
+        item["score"] = float(item.get("score", 0.0)) + (0.05 if matched else -0.05)
         item["metadata"]["institution_boost"] = matched
+        boosted.append(item)
+    boosted.sort(key=lambda row: row.get("score", 0.0), reverse=True)
+    return boosted
+
+
+def _intent_targets(query: str) -> list[str]:
+    folded = _fold(query)
+    mapping = [
+        (["chi tieu", "quota"], "admission_quota"),
+        (["diem chuan", "cutoff", "admission score"], "admission_score"),
+        (["hoc phi", "tuition", "fee"], "tuition_fee"),
+        (["hoc bong", "scholarship", "financial aid"], "scholarship"),
+        (["ho so", "giay to", "dang ky", "apply", "application"], "application"),
+        (["ielts", "sat", "act", "a-level", "chung chi", "phuong thuc", "xet tuyen"], "admission_method"),
+        (["dieu kien", "entry requirement", "gpa"], "entry_requirement"),
+    ]
+    return [target for markers, target in mapping if any(marker in folded for marker in markers)]
+
+
+def _apply_intent_boost(query: str, candidates: list[dict]) -> list[dict]:
+    targets = _intent_targets(query)
+    if not targets:
+        return candidates
+    boosted: list[dict] = []
+    for item in candidates:
+        meta = item.get("metadata", {}) or {}
+        meta_text = _fold(
+            " ".join(
+                str(meta.get(key, ""))
+                for key in ("document_type", "type", "title", "source", "source_path", "sub_category")
+            )
+        )
+        matched = any(target in meta_text for target in targets)
+        if "admission_method" in targets and any(kind in meta_text for kind in ["admission_regulation", "admission_quota"]):
+            matched = True
+        incompatible = (
+            "admission_score" in meta_text
+            and any(target in {"admission_method", "admission_quota", "entry_requirement"} for target in targets)
+        )
+        item = dict(item)
+        item["metadata"] = dict(meta)
+        item["score"] = float(item.get("score", 0.0)) + (0.24 if matched else 0.0) - (0.3 if incompatible else 0.0)
+        item["metadata"]["intent_boost"] = matched
         boosted.append(item)
     boosted.sort(key=lambda row: row.get("score", 0.0), reverse=True)
     return boosted
@@ -93,7 +145,7 @@ def _targeted_metadata_search(query: str, top_k: int) -> list[dict]:
 def retrieve(
     query: str,
     top_k: int = DEFAULT_TOP_K,
-    score_threshold: float = SCORE_THRESHOLD,
+    score_threshold: float | None = None,
     use_reranking: bool = True,
     mode: str = "hybrid",
 ) -> list[dict]:
@@ -101,6 +153,8 @@ def retrieve(
         return []
     top_k = max(1, min(int(top_k), 20))
     query = query.strip()
+    if score_threshold is None:
+        score_threshold = active_score_threshold()
 
     if mode == "dense_only":
         dense = semantic_search(query, top_k=top_k)
@@ -131,7 +185,7 @@ def retrieve(
         item["source"] = "hybrid"
         item.setdefault("metadata", {})["dense_best_score"] = best_dense_score
         item["metadata"]["fusion_method"] = "rrf"
-    merged = _apply_institution_boost(query, merged)
+    merged = _apply_intent_boost(query, _apply_institution_boost(query, merged))
 
     if _query_targets(query):
         matched = [item for item in merged if item.get("metadata", {}).get("institution_boost")]
@@ -139,7 +193,7 @@ def retrieve(
 
     if use_reranking and merged:
         final = rerank(query, merged, top_k=top_k, method=RERANK_METHOD)
-        final = _apply_institution_boost(query, final)
+        final = _apply_intent_boost(query, _apply_institution_boost(query, final))
         for item in final:
             item["source"] = "hybrid"
         return final[:top_k]

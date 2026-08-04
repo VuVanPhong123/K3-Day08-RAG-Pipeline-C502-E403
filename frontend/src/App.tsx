@@ -33,6 +33,8 @@ type Health = {
   generator: { provider: string; model: string };
   pageindex_backend: string;
   embedding_backend: string;
+  embedding_backend_configured?: string;
+  embedding_backend_actual?: string;
 };
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
@@ -191,7 +193,7 @@ function App() {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 78000);
     try {
-      const history = [...messages, userMessage]
+      const history = messages
         .slice(-8)
         .map(({ role, content }) => ({ role, content }));
       const response = await fetch(`${API_URL}/api/chat`, {
@@ -291,11 +293,11 @@ function App() {
         <section className="chat-panel" aria-label="Chat">
           <div className="suggestions">
             {(suggestions.length ? suggestions : [
-              "Điều kiện IELTS vào HUST là gì?",
-              "Học phí RMIT Việt Nam bao nhiêu?",
+              "Điều kiện IELTS vào HUST năm 2026 là gì?",
+              "HUST chấp nhận những chứng chỉ quốc tế nào?",
               "VinUni có học bổng nào?",
               "Chỉ tiêu HUST năm 2026?",
-              "Điểm chuẩn ngành CNTT?"
+              "Học phí Computer Science tại RMIT năm 2026 là bao nhiêu?"
             ]).map((question) => (
               <button key={question} type="button" onClick={() => sendMessage(question)} disabled={loading}>
                 {question}

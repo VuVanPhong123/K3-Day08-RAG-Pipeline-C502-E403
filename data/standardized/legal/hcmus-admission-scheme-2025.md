@@ -4,7 +4,7 @@
 - Source: https://tuyensinh.hcmus.edu.vn/wp-content/uploads/2025/06/THONG-TIN-TUYEN-SINH-2025-HCMUS_18062025.pdf
 - Admission year: 2025
 - Document type: admission_scheme
-- Retrieved at: 2026-08-04T10:27:07+07:00
+- Retrieved at: 2026-08-04T12:22:53+07:00
 
 ---
 CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM

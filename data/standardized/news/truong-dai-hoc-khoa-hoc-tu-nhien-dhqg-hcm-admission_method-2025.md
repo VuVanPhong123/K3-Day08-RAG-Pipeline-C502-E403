@@ -4,6 +4,8 @@
 - Source: https://tuyensinh.hcmus.edu.vn/2025-thong-tin-tuyen-sinh/
 - Admission year: 2025
 - Document type: admission_method
+- Page type: detail_page
+- Primary evidence: True
 - Retrieved at: 2026-08-04T11:24:26+07:00
 
 ---

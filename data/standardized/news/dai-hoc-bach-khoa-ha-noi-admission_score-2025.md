@@ -4,6 +4,8 @@
 - Source: https://ts.hust.edu.vn/b/diem-chuan-tuyen-sinh
 - Admission year: 2025
 - Document type: admission_score
+- Page type: listing_page
+- Primary evidence: False
 - Retrieved at: 2026-08-04T11:24:23+07:00
 
 ---

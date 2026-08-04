@@ -1,0 +1,85 @@
+{
+  "title": "Curated HUST admission scores 2025 from official text evidence",
+  "institution": "Đại học Bách khoa Hà Nội",
+  "category": "admission_score",
+  "sub_category": "official_article_text",
+  "admission_year": 2025,
+  "page_type": "curated_table",
+  "is_primary_evidence": true,
+  "url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa",
+  "data_quality": "usable_with_minor_noise",
+  "records": [
+    {
+      "institution": "Đại học Bách khoa Hà Nội",
+      "admission_year": 2025,
+      "program_code": "IT-E10",
+      "program_name": "Chương trình tiên tiến Khoa học dữ liệu và Trí tuệ nhân tạo",
+      "method": "THPT",
+      "admission_score": 29.39,
+      "score_scale": 30,
+      "source_url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa",
+      "source_title": "Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025",
+      "evidence": "Chương trình tiên tiến Khoa học dữ liệu và Trí tuệ nhân tạo (IT-E10) có điểm chuẩn cao nhất là 29,39 điểm theo điểm thi tốt nghiệp THPT."
+    },
+    {
+      "institution": "Đại học Bách khoa Hà Nội",
+      "admission_year": 2025,
+      "program_code": "IT1",
+      "program_name": "Khoa học máy tính",
+      "method": "THPT",
+      "admission_score": 29.19,
+      "score_scale": 30,
+      "source_url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa",
+      "source_title": "Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025",
+      "evidence": "Tiếp theo là Chương trình Khoa học máy tính (IT1) có điểm chuẩn là 29,19 điểm."
+    },
+    {
+      "institution": "Đại học Bách khoa Hà Nội",
+      "admission_year": 2025,
+      "program_code": "EE2",
+      "program_name": "Kỹ thuật Điều khiển - Tự động hoá",
+      "method": "THPT",
+      "admission_score": 28.48,
+      "score_scale": 30,
+      "source_url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa",
+      "source_title": "Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025",
+      "evidence": "Chương trình Kỹ thuật Điều khiển - Tự động hoá (EE2) có điểm chuẩn là 28,48 điểm."
+    },
+    {
+      "institution": "Đại học Bách khoa Hà Nội",
+      "admission_year": 2025,
+      "program_code": "MS2",
+      "program_name": "Kỹ thuật Vi điện tử và Công nghệ nano",
+      "method": "THPT",
+      "admission_score": 28.25,
+      "score_scale": 30,
+      "source_url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa",
+      "source_title": "Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025",
+      "evidence": "Chương trình Kỹ thuật Vi điện tử và Công nghệ nano (MS2) có điểm chuẩn là 28,25."
+    },
+    {
+      "institution": "Đại học Bách khoa Hà Nội",
+      "admission_year": 2025,
+      "program_code": "ET1",
+      "program_name": "Kỹ thuật Điện tử - Viễn thông",
+      "method": "THPT",
+      "admission_score": 28.07,
+      "score_scale": 30,
+      "source_url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa",
+      "source_title": "Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025",
+      "evidence": "Chương trình Kỹ thuật Điện tử - Viễn thông (ET1) có điểm chuẩn là 28,07 điểm."
+    },
+    {
+      "institution": "Đại học Bách khoa Hà Nội",
+      "admission_year": 2025,
+      "program_code": "TROY-BA",
+      "program_name": "TROY-BA",
+      "method": "THPT",
+      "admission_score": 19.0,
+      "score_scale": 30,
+      "source_url": "https://ts.hust.edu.vn/tin-tuc/diem-chuan-cao-nhat-dh-bach-khoa-ha-noi-2025-29-39-diem-thpt-tuong-duong-93-96-diem-xttn-va-86-97-diem-tsa",
+      "source_title": "Điểm chuẩn cao nhất ĐH Bách khoa Hà Nội 2025",
+      "evidence": "Chương trình có điểm chuẩn thấp nhất năm nay là TROY-BA với mức điểm là 19,00 điểm theo điểm thi tốt nghiệp THPT."
+    }
+  ]
+}

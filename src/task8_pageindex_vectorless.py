@@ -26,6 +26,8 @@ UPLOAD_TIMEOUT_SECONDS = int(os.getenv("PAGEINDEX_UPLOAD_TIMEOUT_SECONDS", "120"
 QUERY_TIMEOUT_SECONDS = int(os.getenv("PAGEINDEX_QUERY_TIMEOUT_SECONDS", "45"))
 POLL_SLEEP_SECONDS = float(os.getenv("PAGEINDEX_POLL_SLEEP_SECONDS", "3"))
 MAX_POLL_ATTEMPTS = int(os.getenv("PAGEINDEX_MAX_POLL_ATTEMPTS", "12"))
+MAX_UPLOAD_ATTEMPTS = int(os.getenv("PAGEINDEX_MAX_UPLOAD_ATTEMPTS", "3"))
+RETRY_COOLDOWN_SECONDS = int(os.getenv("PAGEINDEX_RETRY_COOLDOWN_SECONDS", "3600"))
 
 
 def _safe_pageindex_error(exc: Exception) -> str:
@@ -37,6 +39,18 @@ def _safe_pageindex_error(exc: Exception) -> str:
     if "timeout" in text:
         return "PageIndex request timed out"
     return "PageIndex API request failed"
+
+
+def _can_retry_document(current: dict[str, Any]) -> bool:
+    if current.get("status") == "completed":
+        return False
+    attempts = int(current.get("attempt_count", 0) or 0)
+    if attempts >= MAX_UPLOAD_ATTEMPTS:
+        return False
+    last_attempt = current.get("last_attempt_epoch")
+    if isinstance(last_attempt, (int, float)) and time.time() - float(last_attempt) < RETRY_COOLDOWN_SECONDS:
+        return False
+    return True
 
 
 def _client():
@@ -157,8 +171,9 @@ def upload_documents() -> dict[str, Any]:
 
     for pdf in _candidate_pdfs():
         current = by_filename.get(pdf["filename"], {})
-        if current.get("fingerprint") == pdf["fingerprint"] and current.get("status") in {"completed", "api_error", "timeout"}:
+        if current.get("fingerprint") == pdf["fingerprint"] and not _can_retry_document(current):
             continue
+        attempt_count = int(current.get("attempt_count", 0) or 0) + 1
         try:
             response = client.submit_document(str(pdf["path"]))
             doc_id = _doc_id_from_response(response)
@@ -171,6 +186,9 @@ def upload_documents() -> dict[str, Any]:
                 "fingerprint": pdf["fingerprint"],
                 "doc_id": doc_id,
                 "status": status,
+                "attempt_count": attempt_count,
+                "last_attempt_at": now_iso(),
+                "last_attempt_epoch": time.time(),
                 "uploaded_at": now_iso(),
                 "last_checked_at": now_iso(),
             }
@@ -185,6 +203,10 @@ def upload_documents() -> dict[str, Any]:
                 "fingerprint": pdf["fingerprint"],
                 "doc_id": current.get("doc_id", ""),
                 "status": "api_error",
+                "attempt_count": attempt_count,
+                "last_attempt_at": now_iso(),
+                "last_attempt_epoch": time.time(),
+                "error_category": _safe_pageindex_error(exc),
                 "uploaded_at": current.get("uploaded_at", ""),
                 "last_checked_at": now_iso(),
             }

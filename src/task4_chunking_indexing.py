@@ -37,7 +37,7 @@ COLLECTION_NAME = "university_admission_docs"
 class LocalHashEmbeddingModel:
     """Deterministic fallback embedding model for offline tests and demos."""
 
-    name = "local_hashing_vectorizer"
+    name = "local_hashing_1024"
     dimension = EMBEDDING_DIM
 
     def __init__(self) -> None:
@@ -75,6 +75,14 @@ def _parse_header(content: str) -> tuple[str, dict]:
     return title, metadata
 
 
+def embedding_model_configured() -> str:
+    return os.getenv("EMBEDDING_MODEL", EMBEDDING_MODEL)
+
+
+def embedding_model_actual() -> str:
+    return getattr(get_embedding_model(), "name", embedding_model_configured())
+
+
 def corpus_fingerprint() -> str:
     h = stable_hash("admission-corpus", 64)
     parts: list[str] = []
@@ -91,6 +99,9 @@ def load_documents() -> list[dict]:
         if len(content.strip()) <= 200:
             continue
         title, header = _parse_header(content)
+        primary = header.get("primary_evidence", "true").strip().lower()
+        if primary in {"false", "0", "no"}:
+            continue
         doc_type = header.get("document_type") or header.get("category") or path.parent.name
         url = header.get("source", "")
         metadata = {
@@ -103,6 +114,11 @@ def load_documents() -> list[dict]:
             "admission_year": header.get("admission_year", ""),
             "year": header.get("admission_year", ""),
             "url": url,
+            "page_type": header.get("page_type", ""),
+            "is_primary_evidence": primary not in {"false", "0", "no"},
+            "parent_url": header.get("parent_source", ""),
+            "sub_category": header.get("sub_category", ""),
+            "data_quality": header.get("data_quality", ""),
         }
         documents.append({"content": content, "metadata": metadata})
     return documents
@@ -137,7 +153,7 @@ def get_embedding_model():
         try:
             from sentence_transformers import SentenceTransformer
 
-            model_name = os.getenv("EMBEDDING_MODEL", EMBEDDING_MODEL)
+            model_name = embedding_model_configured()
             model = SentenceTransformer(model_name)
             model.name = model_name
             model.dimension = EMBEDDING_DIM
@@ -203,10 +219,12 @@ def index_to_vectorstore(chunks: list[dict], rebuild: bool = False):
             {
                 "fingerprint": corpus_fingerprint(),
                 "collection": COLLECTION_NAME,
-                "embedding_model_configured": EMBEDDING_MODEL,
-                "embedding_model_actual": getattr(get_embedding_model(), "name", EMBEDDING_MODEL),
+                "corpus_fingerprint": corpus_fingerprint(),
+                "embedding_model_configured": embedding_model_configured(),
+                "embedding_model_actual": embedding_model_actual(),
                 "chunk_size": CHUNK_SIZE,
                 "chunk_overlap": CHUNK_OVERLAP,
+                "collection_name": COLLECTION_NAME,
             },
             ensure_ascii=False,
             indent=2,
@@ -230,7 +248,21 @@ def ensure_index_ready() -> bool:
         count = collection.count()
     except Exception:
         count = 0
-    if count == 0 or stored.get("fingerprint") != current_fp:
+    expected = {
+        "fingerprint": current_fp,
+        "corpus_fingerprint": current_fp,
+        "embedding_model_configured": embedding_model_configured(),
+        "embedding_model_actual": embedding_model_actual(),
+        "chunk_size": CHUNK_SIZE,
+        "chunk_overlap": CHUNK_OVERLAP,
+        "collection_name": COLLECTION_NAME,
+    }
+    needs_rebuild = count == 0
+    for key, value in expected.items():
+        if stored.get(key) != value:
+            needs_rebuild = True
+            break
+    if needs_rebuild:
         run_pipeline(rebuild=True)
     return True
 

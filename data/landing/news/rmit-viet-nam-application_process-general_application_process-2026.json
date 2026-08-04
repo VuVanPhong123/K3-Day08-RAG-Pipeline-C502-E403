@@ -1,0 +1,42 @@
+{
+  "url": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs",
+  "title": "Đăng ký chương trình đại học RMIT Việt Nam",
+  "institution": "RMIT Việt Nam",
+  "category": "application_process",
+  "sub_category": "general_application_process",
+  "admission_year": 2026,
+  "date_crawled": "2026-08-04T12:38:07+07:00",
+  "language": "vi",
+  "source_domain": "www.rmit.edu.vn",
+  "page_type": "detail_page",
+  "detected_page_type": "detail_page",
+  "is_primary_evidence": true,
+  "parent_url": "",
+  "discovered_from": "",
+  "child_sources": [
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/important-dates-for-students",
+      "anchor_text": "arrow icon Important dates for students",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs",
+      "anchor_text": "entry requirements under each program page",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs"
+    },
+    {
+      "url": "https://www.rmit.edu.vn/assets/vn/en/assets-for-production/documents/pdfs/study-at-rmit/applying-to-rmit/english-pdf/application-checklist-for-undergraduate-programs.pdf",
+      "anchor_text": "Download the application checklist",
+      "parent_url": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs"
+    }
+  ],
+  "crawl_stats": {
+    "visible_text_characters": 5914,
+    "link_count": 227,
+    "heading_count": 19,
+    "table_count": 0,
+    "table_rows": 0
+  },
+  "content_markdown": "- English language programs\n\n- International students\n\n- Apply to RMIT\n\n- Global study options\n\n- Scholarships\n\n- Study at RMIT Melbourne\n\n- Tuition fees\n\n- Important dates for students\n\n- Life on campus Sports and social clubs Support services Life and work opportunities\n\n- Life on campus\n\n- Sports and social clubs\n\n- Support services\n\n- Life and work opportunities\n\n- Why choose RMIT Vietnam RMIT Parents and Family Work at RMIT Schools and Centres Who we are Vietnam Country Commitment Locations and Campuses News Events\n\n- Why choose RMIT Vietnam\n\n- RMIT Parents and Family\n\n- Work at RMIT\n\n- Schools and Centres\n\n- Vietnam Country Commitment\n\n- Locations and Campuses\n\n- Research Clusters Projects and Partnership Ethics and Integrity PhD programs Office for Research & Innovation\n\n- Research Clusters\n\n- Projects and Partnership\n\n- Ethics and Integrity\n\n- PhD programs\n\n- Office for Research & Innovation\n\n- Business & Industry\n\n- Employ our students and graduates Skills that make the difference Employers Partnerships Contact Business and Industry Corporate and Executive Development\n\n- Employ our students and graduates\n\n- Skills that make the difference\n\n- Partnerships\n\n- Contact Business and Industry\n\n- Corporate and Executive Development",
+  "data_quality": "incomplete_detail"
+}

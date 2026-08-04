@@ -6,10 +6,8 @@
     "institution": "VinUniversity",
     "document_type": "admission_scheme",
     "admission_year": 2025,
-    "retrieved_at": "2026-08-04T10:26:57+07:00",
-    "status": "downloaded",
-    "content_type": "application/pdf",
-    "size_bytes": 5102968
+    "retrieved_at": "2026-08-04T12:22:53+07:00",
+    "status": "exists"
   },
   {
     "filename": "hcmus-admission-scheme-2025.pdf",
@@ -18,10 +16,8 @@
     "institution": "Trường Đại học Khoa học tự nhiên, ĐHQG-HCM",
     "document_type": "admission_scheme",
     "admission_year": 2025,
-    "retrieved_at": "2026-08-04T10:27:07+07:00",
-    "status": "downloaded",
-    "content_type": "application/pdf",
-    "size_bytes": 1896244
+    "retrieved_at": "2026-08-04T12:22:53+07:00",
+    "status": "exists"
   },
   {
     "filename": "hcmus-quota-methods-2025.pdf",
@@ -30,10 +26,8 @@
     "institution": "Trường Đại học Khoa học tự nhiên, ĐHQG-HCM",
     "document_type": "admission_quota",
     "admission_year": 2025,
-    "retrieved_at": "2026-08-04T10:27:14+07:00",
-    "status": "downloaded",
-    "content_type": "application/pdf",
-    "size_bytes": 507786
+    "retrieved_at": "2026-08-04T12:22:53+07:00",
+    "status": "exists"
   },
   {
     "filename": "rmit-international-student-guide-2026.pdf",
@@ -42,9 +36,38 @@
     "institution": "RMIT Việt Nam",
     "document_type": "admission_guide",
     "admission_year": 2026,
-    "retrieved_at": "2026-08-04T10:27:15+07:00",
+    "retrieved_at": "2026-08-04T12:22:53+07:00",
+    "status": "exists"
+  },
+  {
+    "filename": "hust-admission-regulation-2026.pdf",
+    "title": "Quy chế tuyển sinh đại học năm 2026 Đại học Bách khoa Hà Nội",
+    "url": "https://www.hust.edu.vn/uploads/sys/tuyen-sinh/2026_05/4740_qd-dhbk-qcts.pdf",
+    "institution": "Đại học Bách khoa Hà Nội",
+    "document_type": "admission_regulation",
+    "admission_year": 2026,
+    "page_type": "detail_page",
+    "is_primary_evidence": true,
+    "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-che-tuyen-sinh-dai-hoc-nam-2026",
+    "retrieved_at": "2026-08-04T12:22:53+07:00",
     "status": "downloaded",
     "content_type": "application/pdf",
-    "size_bytes": 4213979
+    "size_bytes": 1133040
+  },
+  {
+    "filename": "hust-xttn-regulation-2026.pdf",
+    "title": "Quy định về Phương thức Xét tuyển tài năng năm 2026 Đại học Bách khoa Hà Nội",
+    "url": "https://www.hust.edu.vn/uploads/sys/tuyen-sinh/2026_03/qui-dinh-ve-xttn-nam-2026-ky.pdf",
+    "institution": "Đại học Bách khoa Hà Nội",
+    "document_type": "admission_method",
+    "sub_category": "talent_admission",
+    "admission_year": 2026,
+    "page_type": "detail_page",
+    "is_primary_evidence": true,
+    "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026",
+    "retrieved_at": "2026-08-04T12:22:57+07:00",
+    "status": "downloaded",
+    "content_type": "application/pdf",
+    "size_bytes": 457288
   }
 ]

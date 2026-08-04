@@ -1,28 +1,28 @@
 # RAG Evaluation Results
 
-- Run time: 2026-08-04T12:08:47+07:00
+- Run time: 2026-08-04T12:39:06+07:00
 - Framework: Local proxy evaluation - not official RAGAS scores
 - Judge model: local deterministic proxy
-- Corpus fingerprint: 7fa2433a27f8fec481ea6fa95b70b69b
-- Test cases: 20
+- Corpus fingerprint: e6f6e9a6862c8bd1dc3ccf97a9c9d29d
+- Test cases: 18
 
 ## A/B Metrics
 
 | Metric | Config A | Config B | Delta |
 |---|---:|---:|---:|
-| faithfulness | 0.7126 | 0.7111 | 0.0015 |
-| answer_relevance | 0.1773 | 0.1672 | 0.0101 |
-| context_recall | 1.0000 | 0.7082 | 0.2918 |
-| context_precision | 1.0000 | 1.0000 | 0.0000 |
-| **Average** | **0.7225** | **0.6466** | **0.0758** |
+| faithfulness | 0.6098 | 0.6355 | -0.0257 |
+| answer_relevance | 0.2005 | 0.1955 | 0.0050 |
+| context_recall | 0.9444 | 0.6737 | 0.2707 |
+| context_precision | 0.9444 | 0.9444 | 0.0000 |
+| **Average** | **0.6748** | **0.6123** | **0.0625** |
 
 ## Bottom 3
 
 | Question | Faithfulness | Relevance | Recall | Precision | Failure stage | Root cause |
 |---|---:|---:|---:|---:|---|---|
-| Trường nào có ký túc xá tốt nhất cho sinh viên năm nhất? | 0.6194 | 0.0000 | 1.0000 | 1.0000 | Retrieval/grounding | Local hash embedding and noisy web extraction can retrieve broad sections instead of exact evidence. |
-| Các mức học bổng merit-based của VinUni cho bậc đại học dao động từ bao nhiêu đến bao nhiêu? | 0.6379 | 0.1032 | 1.0000 | 1.0000 | Retrieval/grounding | Local hash embedding and noisy web extraction can retrieve broad sections instead of exact evidence. |
-| Giá Bitcoin ngày mai là bao nhiêu? | 0.7516 | 0.0000 | 1.0000 | 1.0000 | Retrieval/grounding | Local hash embedding and noisy web extraction can retrieve broad sections instead of exact evidence. |
+| VinUni có trợ cấp học phí cho sinh viên nhập học giai đoạn 2025-2030 không? | 0.0000 | 0.0727 | 0.0000 | 0.0000 | Retrieval/grounding | Local hash embedding and noisy web extraction can retrieve broad sections instead of exact evidence. |
+| Các mức học bổng merit-based của VinUni cho bậc đại học dao động từ bao nhiêu đến bao nhiêu? | 0.5714 | 0.0682 | 1.0000 | 1.0000 | Retrieval/grounding | Local hash embedding and noisy web extraction can retrieve broad sections instead of exact evidence. |
+| Điều kiện học thuật của Bachelor of Computer Science tại RMIT Việt Nam là gì? | 0.6525 | 0.0921 | 1.0000 | 1.0000 | Retrieval/grounding | Local hash embedding and noisy web extraction can retrieve broad sections instead of exact evidence. |
 
 ## Recommendations
 

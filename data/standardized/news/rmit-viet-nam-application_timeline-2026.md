@@ -4,6 +4,8 @@
 - Source: https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs
 - Admission year: 2026
 - Document type: application_timeline
+- Page type: mixed_page
+- Primary evidence: True
 - Retrieved at: 2026-08-04T11:24:26+07:00
 
 ---

@@ -61,6 +61,29 @@ DOCUMENT_SOURCES = [
         "document_type": "admission_guide",
         "admission_year": 2026,
     },
+    {
+        "filename": "hust-admission-regulation-2026.pdf",
+        "title": "Quy chế tuyển sinh đại học năm 2026 Đại học Bách khoa Hà Nội",
+        "url": "https://www.hust.edu.vn/uploads/sys/tuyen-sinh/2026_05/4740_qd-dhbk-qcts.pdf",
+        "institution": "Đại học Bách khoa Hà Nội",
+        "document_type": "admission_regulation",
+        "admission_year": 2026,
+        "page_type": "detail_page",
+        "is_primary_evidence": True,
+        "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-che-tuyen-sinh-dai-hoc-nam-2026",
+    },
+    {
+        "filename": "hust-xttn-regulation-2026.pdf",
+        "title": "Quy định về Phương thức Xét tuyển tài năng năm 2026 Đại học Bách khoa Hà Nội",
+        "url": "https://www.hust.edu.vn/uploads/sys/tuyen-sinh/2026_03/qui-dinh-ve-xttn-nam-2026-ky.pdf",
+        "institution": "Đại học Bách khoa Hà Nội",
+        "document_type": "admission_method",
+        "sub_category": "talent_admission",
+        "admission_year": 2026,
+        "page_type": "detail_page",
+        "is_primary_evidence": True,
+        "parent_url": "https://ts.hust.edu.vn/tin-tuc/quy-dinh-ve-phuong-thuc-xet-tuyen-tai-nang-nam-2026",
+    },
 ]
 
 
@@ -96,7 +119,10 @@ def download_file(source: dict) -> dict:
         manifest_item["status"] = "exists"
         return manifest_item
 
-    response = requests.get(source["url"], headers=HEADERS, timeout=TIMEOUT)
+    try:
+        response = requests.get(source["url"], headers=HEADERS, timeout=TIMEOUT)
+    except requests.exceptions.SSLError:
+        response = requests.get(source["url"], headers=HEADERS, timeout=TIMEOUT, verify=False)
     response.raise_for_status()
     content_type = response.headers.get("content-type", "").split(";")[0].lower()
     _validate_content_type(source["url"], content_type, filename)

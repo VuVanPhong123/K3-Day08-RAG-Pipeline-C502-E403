@@ -4,6 +4,8 @@
 - Source: https://admissions.vinuni.edu.vn/scholarship-and-financial-aid/undergraduate-programs/scholarships/
 - Admission year: 2026
 - Document type: scholarship
+- Page type: detail_page
+- Primary evidence: True
 - Retrieved at: 2026-08-04T11:24:24+07:00
 
 ---

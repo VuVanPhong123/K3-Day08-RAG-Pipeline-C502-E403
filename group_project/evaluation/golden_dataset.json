@@ -2,7 +2,7 @@
   {
     "question": "Đại học Bách khoa Hà Nội dự kiến tuyển bao nhiêu sinh viên đại học chính quy năm 2026?",
     "expected_answer": "Đại học Bách khoa Hà Nội công bố tổng chỉ tiêu dự kiến khoảng 9.880 sinh viên cho tuyển sinh đại học chính quy năm 2026.",
-    "expected_context": "Thông tin tuyển sinh đại học chính quy năm 2026 của Đại học Bách khoa Hà Nội nêu tổng chỉ tiêu dự kiến 9.880 sinh viên.",
+    "expected_context": "Thông tin tuyển sinh đại học chính quy năm 2026 của HUST nêu tổng chỉ tiêu dự kiến 9.880 sinh viên.",
     "institution": "Đại học Bách khoa Hà Nội",
     "admission_year": 2026,
     "category": "admission_quota",
@@ -11,7 +11,7 @@
   },
   {
     "question": "HUST có những phương thức xét tuyển chính nào cho năm 2026?",
-    "expected_answer": "HUST giữ ổn định 3 phương thức tuyển sinh chính: xét tuyển tài năng, xét tuyển theo điểm thi Đánh giá tư duy (TSA) và xét tuyển theo điểm thi tốt nghiệp THPT.",
+    "expected_answer": "HUST giữ ổn định 3 phương thức tuyển sinh chính: xét tuyển tài năng, xét tuyển theo điểm thi Đánh giá tư duy và xét tuyển theo điểm thi tốt nghiệp THPT.",
     "expected_context": "Thông tin tuyển sinh HUST 2026 nêu 3 phương thức tuyển sinh cốt lõi: xét tuyển tài năng, TSA và điểm thi tốt nghiệp THPT.",
     "institution": "Đại học Bách khoa Hà Nội",
     "admission_year": 2026,
@@ -20,9 +20,9 @@
     "source": "https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026"
   },
   {
-    "question": "Nếu xét tuyển tài năng bằng chứng chỉ quốc tế vào HUST năm 2026 thì cần những chứng chỉ nào?",
-    "expected_answer": "Diện xét tuyển tài năng bằng chứng chỉ quốc tế của HUST yêu cầu thí sinh có điểm trung bình chung từng năm lớp 10, 11, 12 từ 8,00 trở lên và có ít nhất một chứng chỉ quốc tế còn hiệu lực như SAT, ACT, A-Level, AP hoặc IB.",
-    "expected_context": "Mục xét tuyển dựa trên chứng chỉ quốc tế của HUST 2026 nêu điều kiện TBC từng năm từ 8,00 trở lên và các chứng chỉ SAT, ACT, A-Level, AP, IB.",
+    "question": "HUST chấp nhận những chứng chỉ quốc tế nào cho xét tuyển tài năng năm 2026?",
+    "expected_answer": "Diện xét tuyển tài năng bằng chứng chỉ quốc tế của HUST năm 2026 nêu các chứng chỉ SAT, ACT, A-Level, AP và IB.",
+    "expected_context": "Thông tin tuyển sinh HUST 2026 nêu xét tuyển dựa trên các chứng chỉ quốc tế SAT, ACT, A-Level, AP, IB.",
     "institution": "Đại học Bách khoa Hà Nội",
     "admission_year": 2026,
     "category": "admission_method",
@@ -31,7 +31,7 @@
   },
   {
     "question": "Điều kiện IELTS cho các chương trình giảng dạy bằng tiếng Anh của HUST năm 2026 là gì?",
-    "expected_answer": "Với các chương trình giảng dạy bằng tiếng Anh và các chương trình FL1, FL3, FL4, HUST yêu cầu thí sinh đáp ứng một trong các điều kiện ngoại ngữ, gồm VSTEP B1 trở lên, IELTS Academic từ 5.0 trở lên hoặc tương đương, hoặc điểm thi tốt nghiệp THPT môn ngoại ngữ liên quan từ 6.5 trở lên.",
+    "expected_answer": "Với các chương trình giảng dạy bằng tiếng Anh và các chương trình FL1, FL3, FL4, HUST yêu cầu một trong các điều kiện ngoại ngữ gồm VSTEP B1 trở lên, IELTS Academic từ 5.0 trở lên hoặc tương đương, hoặc điểm thi tốt nghiệp THPT môn ngoại ngữ liên quan từ 6.5 trở lên.",
     "expected_context": "Thông tin tuyển sinh HUST 2026 nêu điều kiện ngoại ngữ cho chương trình giảng dạy bằng tiếng Anh, FL1, FL3, FL4.",
     "institution": "Đại học Bách khoa Hà Nội",
     "admission_year": 2026,
@@ -40,19 +40,9 @@
     "source": "https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026"
   },
   {
-    "question": "HUST yêu cầu IELTS bao nhiêu cho chương trình liên kết quốc tế TROY-IT hoặc FL2 năm 2026?",
-    "expected_answer": "Đối với các chương trình liên kết đào tạo quốc tế TROY-IT và FL2, HUST yêu cầu thí sinh có chứng chỉ IELTS Academic đạt 5.5 trở lên.",
-    "expected_context": "Thông tin tuyển sinh HUST 2026 nêu điều kiện IELTS Academic 5.5 trở lên cho TROY-IT và FL2.",
-    "institution": "Đại học Bách khoa Hà Nội",
-    "admission_year": 2026,
-    "category": "language_requirement",
-    "difficulty": "medium",
-    "source": "https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026"
-  },
-  {
-    "question": "Chỉ tiêu ngành CNTT: Khoa học Máy tính mã IT1 của HUST năm 2026 là bao nhiêu?",
-    "expected_answer": "Trong bảng chỉ tiêu HUST 2026, ngành CNTT: Khoa học Máy tính mã IT1 có chỉ tiêu 300.",
-    "expected_context": "Bảng chỉ tiêu HUST 2026 có dòng CNTT: Khoa học Máy tính, mã IT1, chỉ tiêu 300.",
+    "question": "Chỉ tiêu ngành Khoa học máy tính mã IT1 của HUST năm 2026 là bao nhiêu?",
+    "expected_answer": "Trong bảng chỉ tiêu HUST 2026, ngành CNTT: Khoa học máy tính mã IT1 có chỉ tiêu 300.",
+    "expected_context": "Bảng chỉ tiêu HUST 2026 có dòng CNTT: Khoa học máy tính, mã IT1, chỉ tiêu 300.",
     "institution": "Đại học Bách khoa Hà Nội",
     "admission_year": 2026,
     "category": "admission_quota",
@@ -61,8 +51,8 @@
   },
   {
     "question": "Lịch thi Đánh giá tư duy TSA của HUST năm 2026 gồm những đợt nào?",
-    "expected_answer": "HUST dự kiến tổ chức 3 đợt thi TSA năm 2026: đợt 1 thi ngày 24-25/01/2026, đăng ký 05-15/12/2025; đợt 2 thi ngày 14-15/03/2026, đăng ký 05-15/02/2026; đợt 3 thi ngày 16-17/05/2026, đăng ký 05-15/04/2026.",
-    "expected_context": "Mục thông tin kỳ thi Đánh giá tư duy HUST 2026 nêu 3 đợt thi, ngày thi và ngày đăng ký tương ứng.",
+    "expected_answer": "HUST dự kiến tổ chức 3 đợt thi TSA năm 2026: đợt 1 ngày 24-25/01/2026, đợt 2 ngày 14-15/03/2026 và đợt 3 ngày 16-17/05/2026.",
+    "expected_context": "Thông tin kỳ thi Đánh giá tư duy HUST 2026 nêu 3 đợt thi và ngày thi tương ứng.",
     "institution": "Đại học Bách khoa Hà Nội",
     "admission_year": 2026,
     "category": "application_timeline",
@@ -70,19 +60,39 @@
     "source": "https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026"
   },
   {
-    "question": "VinUni có trợ cấp học phí cho sinh viên nhập học giai đoạn 2025-2030 không?",
-    "expected_answer": "Có. VinUni công bố từ năm 2025 đến 2030, tất cả sinh viên nhập học được cấp trợ cấp học phí 35% trong toàn bộ thời gian học.",
-    "expected_context": "Trang học bổng VinUni nêu từ 2025 đến 2030, all students enrolling at VinUniversity will be granted a 35% tuition subsidy.",
+    "question": "Điểm chuẩn IT1 HUST năm 2025 là bao nhiêu?",
+    "expected_answer": "Bài viết chính thức của HUST nêu Chương trình Khoa học máy tính (IT1) có điểm chuẩn 29,19 điểm theo thang điểm thi tốt nghiệp THPT.",
+    "expected_context": "Curated HUST admission scores 2025 có dòng IT1, Khoa học máy tính, admission_score 29.19, method THPT.",
+    "institution": "Đại học Bách khoa Hà Nội",
+    "admission_year": 2025,
+    "category": "admission_score",
+    "difficulty": "hard",
+    "source": "hust_admission_scores_2025"
+  },
+  {
+    "question": "VinUni công bố học phí năm học 2026-2027 cho chương trình Medical Doctor là bao nhiêu?",
+    "expected_answer": "Trang học phí VinUni năm học 2026-2027 nêu chương trình Medical Doctor có học phí niêm yết 815.850.000 VND mỗi năm học.",
+    "expected_context": "Bảng Undergraduate programs - Tuition fees của VinUni 2026-2027 có dòng Medical Doctor với Listed Tuition Fee per Academic Year 815,850,000.",
     "institution": "VinUniversity",
     "admission_year": 2026,
     "category": "tuition_fee",
+    "difficulty": "medium",
+    "source": "https://admissions.vinuni.edu.vn/tuition-fee/undergraduate/"
+  },
+  {
+    "question": "VinUni có trợ cấp học phí cho sinh viên nhập học giai đoạn 2025-2030 không?",
+    "expected_answer": "Có. VinUni nêu từ năm 2025 đến 2030, tất cả sinh viên nhập học được cấp trợ cấp học phí 35% trong toàn bộ thời gian học.",
+    "expected_context": "Trang học bổng VinUni nêu from 2025 to 2030, all students enrolling at VinUniversity will be granted a 35% tuition subsidy.",
+    "institution": "VinUniversity",
+    "admission_year": 2026,
+    "category": "scholarship",
     "difficulty": "easy",
     "source": "https://admissions.vinuni.edu.vn/scholarship-and-financial-aid/undergraduate-programs/scholarships/"
   },
   {
     "question": "Các mức học bổng merit-based của VinUni cho bậc đại học dao động từ bao nhiêu đến bao nhiêu?",
-    "expected_answer": "Học bổng merit-based của VinUni có giá trị từ 50% đến 100% học phí. Các mức được nêu gồm President's Excellence Scholarship, Provost's Merit Scholarship, Dean's Distinction Scholarship và Discipline's Honor Scholarship.",
-    "expected_context": "Trang học bổng VinUni nêu merit-based scholarships range from 50% to 100% of tuition fees và liệt kê các loại học bổng.",
+    "expected_answer": "Học bổng merit-based của VinUni có giá trị từ 50% đến 100% học phí.",
+    "expected_context": "Trang học bổng VinUni nêu merit-based scholarships range from 50% to 100% of tuition fees.",
     "institution": "VinUniversity",
     "admission_year": 2026,
     "category": "scholarship",
@@ -90,54 +100,34 @@
     "source": "https://admissions.vinuni.edu.vn/scholarship-and-financial-aid/undergraduate-programs/scholarships/"
   },
   {
-    "question": "Nếu đã trúng tuyển VinUni nhưng gặp khó khăn tài chính thì có thể xin hỗ trợ thêm không?",
-    "expected_answer": "Có. VinUni nêu ứng viên đáp ứng tiêu chí tuyển sinh nhưng gặp khó khăn tài chính có thể nộp hồ sơ Financial Aid; hỗ trợ tài chính có thể lên tới 100% học phí.",
-    "expected_context": "Trang học bổng VinUni nêu applicants who meet admission criteria but face financial difficulties may apply for Financial Aid, and support can cover up to 100% of tuition fees.",
-    "institution": "VinUniversity",
+    "question": "Học phí Computer Science tại RMIT năm 2026 là bao nhiêu?",
+    "expected_answer": "Bảng học phí RMIT 2026 dưới School of Science, Engineering & Technology nêu Computer Science có học phí năm 375.840.000 VND và học phí toàn chương trình 1.127.520.000 VND.",
+    "expected_context": "Curated RMIT tuition 2026 có Computer Science, annual_fee_vnd 375840000, whole_program_fee_vnd 1127520000.",
+    "institution": "RMIT Việt Nam",
     "admission_year": 2026,
-    "category": "financial_aid",
-    "difficulty": "medium",
-    "source": "https://admissions.vinuni.edu.vn/scholarship-and-financial-aid/undergraduate-programs/scholarships/"
+    "category": "tuition_fee",
+    "difficulty": "hard",
+    "source": "rmit_tuition_fees_2026"
   },
   {
-    "question": "RMIT Việt Nam hướng dẫn nộp hồ sơ đại học như thế nào?",
-    "expected_answer": "RMIT hướng dẫn thí sinh chọn chương trình phù hợp, kiểm tra điều kiện đầu vào, chuẩn bị tài liệu hỗ trợ, sau đó điền đơn đăng ký trực tuyến và đính kèm các giấy tờ liên quan trước khi nộp hồ sơ.",
+    "question": "RMIT Việt Nam hướng dẫn nộp hồ sơ đại học theo các bước nào?",
+    "expected_answer": "RMIT hướng dẫn thí sinh tìm chương trình phù hợp, kiểm tra điều kiện đầu vào, chuẩn bị tài liệu hỗ trợ và nộp đơn đăng ký trực tuyến.",
     "expected_context": "Trang Apply for undergraduate programs của RMIT nêu các bước find your program, check your eligibility, prepare your documents, submit your application.",
     "institution": "RMIT Việt Nam",
     "admission_year": 2026,
     "category": "application_process",
     "difficulty": "easy",
-    "source": "https://www.rmit.edu.vn/study-at-rmit/apply-to-rmit/apply-for-undergraduate-programs"
+    "source": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/apply-for-undergraduate-programs"
   },
   {
-    "question": "Sau khi nộp hồ sơ đại học, RMIT Việt Nam thường phản hồi trong bao lâu?",
-    "expected_answer": "RMIT Việt Nam cho biết trường thường thông báo kết quả hồ sơ trong vòng 10 ngày làm việc; nếu quá thời gian này chưa có phản hồi, thí sinh nên liên hệ đội ngũ Student Recruitment.",
-    "expected_context": "Trang đăng ký đại học RMIT nêu RMIT will normally advise you on the outcome of your application within 10 business days.",
+    "question": "Điều kiện học thuật của Bachelor of Computer Science tại RMIT Việt Nam là gì?",
+    "expected_answer": "Trang Bachelor of Computer Science của RMIT yêu cầu hoàn thành bằng tốt nghiệp THPT Việt Nam và đạt GPA tối thiểu 7.0/10.0 ở lớp 12.",
+    "expected_context": "Bachelor of Computer Science RMIT nêu academic requirements: Completion of Vietnamese Upper Secondary School Graduation Diploma and minimum GPA 7.0/10.0 for Grade 12.",
     "institution": "RMIT Việt Nam",
     "admission_year": 2026,
-    "category": "application_process",
-    "difficulty": "easy",
-    "source": "https://www.rmit.edu.vn/study-at-rmit/apply-to-rmit/apply-for-undergraduate-programs"
-  },
-  {
-    "question": "RMIT Việt Nam thu học phí theo học kỳ hay theo từng môn?",
-    "expected_answer": "RMIT Việt Nam nêu học phí chương trình được định giá và xuất hóa đơn bằng VND theo học kỳ; việc thanh toán được thực hiện mỗi học kỳ, theo từng môn học đã đăng ký.",
-    "expected_context": "Trang tuition fees của RMIT nêu program fees are priced and invoiced in VND by semester, payments are made each semester on a course-by-course basis.",
-    "institution": "RMIT Việt Nam",
-    "admission_year": 2026,
-    "category": "tuition_fee",
+    "category": "entry_requirement",
     "difficulty": "medium",
-    "source": "https://www.rmit.edu.vn/study-at-rmit/tuition-fees"
-  },
-  {
-    "question": "RMIT Việt Nam có những mức học bổng nào cho sinh viên quốc tế?",
-    "expected_answer": "Theo tài liệu tuyển sinh quốc tế của RMIT Việt Nam, học bổng cho sinh viên quốc tế có các mức 25% và 50% học phí chương trình.",
-    "expected_context": "RMIT Vietnam International Student Guide 2026 nêu scholarships are worth 25% and 50% of the program tuition fees.",
-    "institution": "RMIT Việt Nam",
-    "admission_year": 2026,
-    "category": "scholarship",
-    "difficulty": "medium",
-    "source": "https://www.rmit.edu.vn/assets/vn/en/assets-for-production/documents/pdfs/study-at-rmit/international-students/international-student-guide-2026.pdf"
+    "source": "https://www.rmit.edu.vn/study-at-rmit/undergraduate-programs/bachelor-of-computer-science"
   },
   {
     "question": "HCMUS dự kiến tuyển bao nhiêu sinh viên và bao nhiêu ngành năm 2025?",
@@ -150,34 +140,24 @@
     "source": "https://tuyensinh.hcmus.edu.vn/2025-thong-tin-tuyen-sinh/"
   },
   {
-    "question": "HCMUS có các phương thức xét tuyển nào trong năm 2025?",
-    "expected_answer": "HCMUS năm 2025 nêu các nhóm phương thức gồm tuyển thẳng và ưu tiên xét tuyển, xét kết quả thi tốt nghiệp THPT, xét kết quả kỳ thi Đánh giá năng lực của ĐHQG-HCM, cùng phương thức ưu tiên cho thí sinh có chứng chỉ ngoại ngữ quốc tế kết hợp kết quả học tập THPT.",
-    "expected_context": "Thông tin tuyển sinh HCMUS 2025 liệt kê xét tuyển thẳng/ưu tiên, xét THPT, xét ĐGNL ĐHQG-HCM và chứng chỉ ngoại ngữ quốc tế kết hợp học tập THPT.",
+    "question": "HCMUS xét chứng chỉ ngoại ngữ quốc tế kết hợp học bạ THPT năm 2025 như thế nào?",
+    "expected_answer": "HCMUS nêu phương thức 1D dành cho thí sinh có chứng chỉ ngoại ngữ quốc tế kết hợp kết quả học tập THPT, áp dụng cho các chương trình theo đề án; một số chương trình yêu cầu IELTS từ 5.5 hoặc từ 6.0 tùy nhóm ngành.",
+    "expected_context": "Thông báo phương thức xét tuyển 1D HCMUS 2025 nêu chứng chỉ ngoại ngữ quốc tế kết hợp kết quả học tập THPT, IELTS 5.5 cho chương trình tăng cường tiếng Anh và IELTS 6.0 cho chương trình đề án khoa CNTT.",
     "institution": "Trường Đại học Khoa học tự nhiên, ĐHQG-HCM",
     "admission_year": 2025,
     "category": "admission_method",
     "difficulty": "medium",
-    "source": "https://tuyensinh.hcmus.edu.vn/2025-thong-tin-tuyen-sinh/"
+    "source": "https://tuyensinh.hcmus.edu.vn/2025-thong-bao-ve-phuong-thuc-xet-tuyen-1d/"
   },
   {
-    "question": "HCMUS có xét chứng chỉ ngoại ngữ quốc tế kết hợp học bạ THPT năm 2025 không?",
-    "expected_answer": "Có. Trong thông tin tuyển sinh năm 2025, HCMUS nêu phương thức ưu tiên xét tuyển dành cho thí sinh có chứng chỉ ngoại ngữ quốc tế kết hợp với kết quả học tập THPT.",
-    "expected_context": "Trang tuyển sinh HCMUS 2025 có mục ưu tiên xét tuyển dành cho thí sinh có chứng chỉ ngoại ngữ quốc tế kết hợp với kết quả học tập THPT.",
+    "question": "HCMUS xét tuyển theo điểm thi THPT và ĐGNL năm 2025 ở phương thức nào?",
+    "expected_answer": "Thông báo HCMUS năm 2025 nêu phương thức 2 xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT và phương thức 3 xét tuyển dựa trên kết quả kỳ thi Đánh giá năng lực của ĐHQG-HCM.",
+    "expected_context": "Thông báo về phương thức xét tuyển 2 và 3 năm 2025 của HCMUS nêu PT2 THPT và PT3 ĐGNL ĐHQG-HCM.",
     "institution": "Trường Đại học Khoa học tự nhiên, ĐHQG-HCM",
     "admission_year": 2025,
     "category": "admission_method",
     "difficulty": "medium",
-    "source": "https://tuyensinh.hcmus.edu.vn/2025-thong-tin-tuyen-sinh/"
-  },
-  {
-    "question": "Khoa học máy tính chương trình tiên tiến của HCMUS có chỉ tiêu bao nhiêu năm 2025?",
-    "expected_answer": "Phụ lục chỉ tiêu và phương thức xét tuyển HCMUS năm 2025 nêu ngành Khoa học máy tính chương trình tiên tiến có chỉ tiêu 90.",
-    "expected_context": "Phụ lục chỉ tiêu và phương thức xét tuyển HCMUS 2025 có dòng Khoa học máy tính chương trình tiên tiến với chỉ tiêu 90.",
-    "institution": "Trường Đại học Khoa học tự nhiên, ĐHQG-HCM",
-    "admission_year": 2025,
-    "category": "admission_quota",
-    "difficulty": "hard",
-    "source": "https://tuyensinh.hcmus.edu.vn/wp-content/uploads/2025/06/Phu-luc-2.6-Chi-tieu-va-phuong-thuc-xet-tuyen-1.pdf"
+    "source": "https://tuyensinh.hcmus.edu.vn/thong-bao-ve-phuong-thuc-xet-tuyen-2-va-3-nam-2025/"
   },
   {
     "question": "Giá Bitcoin ngày mai là bao nhiêu?",
@@ -190,9 +170,9 @@
     "source": "none"
   },
   {
-    "question": "Trường nào có ký túc xá tốt nhất cho sinh viên năm nhất?",
+    "question": "Cách chữa bệnh đau đầu tại nhà là gì?",
     "expected_answer": "I cannot verify this information",
-    "expected_context": "Bộ tài liệu tuyển sinh không có evidence đủ rõ để xếp hạng ký túc xá giữa các trường.",
+    "expected_context": "Bộ tài liệu tuyển sinh không có evidence y tế để tư vấn chữa bệnh.",
     "institution": "out_of_scope",
     "admission_year": 2026,
     "category": "out_of_scope",
