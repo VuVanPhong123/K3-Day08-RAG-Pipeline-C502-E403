@@ -29,6 +29,8 @@ google-genai>=1.0.0
 
 # Group project - UI
 streamlit>=1.35.0
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
 
 # Group project - Evaluation
 ragas==0.1.21
@@ -37,3 +39,4 @@ langchain-openai==0.1.25
 
 # Testing (dung de cham diem bai ca nhan)
 pytest>=7.0.0
+httpx>=0.27.0

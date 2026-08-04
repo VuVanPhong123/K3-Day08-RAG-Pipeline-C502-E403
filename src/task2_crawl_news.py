@@ -24,6 +24,54 @@ HEADERS = {
     )
 }
 
+ALLOWED_DOMAINS = {
+    "ts.hust.edu.vn",
+    "hust.edu.vn",
+    "www.hust.edu.vn",
+    "vinuni.edu.vn",
+    "www.vinuni.edu.vn",
+    "admissions.vinuni.edu.vn",
+    "rmit.edu.vn",
+    "www.rmit.edu.vn",
+    "tuyensinh.hcmus.edu.vn",
+    "hcmus.edu.vn",
+    "www.hcmus.edu.vn",
+}
+
+STOP_MARKERS = [
+    "Có thể bạn sẽ thích",
+    "Tin xem nhiều",
+    "Thông tin liên hệ",
+    "Copyright",
+    "Các phòng ban",
+    "Từ khoá nổi bật",
+    "Từ khóa nổi bật",
+    "Related posts",
+    "You may also like",
+    "Share this",
+]
+
+MENU_PATTERNS = [
+    r"^\s*(trang chủ|giới thiệu|tuyển sinh|đào tạo|nghiên cứu|liên hệ)\s*$",
+    r"^\s*(facebook|youtube|linkedin|instagram|twitter|x|zalo)\s*$",
+    r"^\s*(đăng nhập|login|register|search|tìm kiếm)\s*$",
+    r"^\s*(previous|next|back to top|menu)\s*$",
+    r"^\s*hotline\s*:?\s*[\d .+-]*\s*$",
+]
+
+SPAM_TOKENS = [
+    "sv388",
+    "sunwin",
+    "go88",
+    "kubet",
+    "tài xỉu",
+    "xóc đĩa",
+    "casino",
+    "bk8",
+    "w88",
+    "789win",
+]
+
 ARTICLE_URLS = [
     {
         "url": "https://ts.hust.edu.vn/tin-tuc/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2026",
@@ -88,9 +136,142 @@ def setup_directory() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
+def _normalize_text(value: str) -> str:
+    value = value.lower()
+    value = re.sub(r"\s+", " ", value)
+    return value.strip(" #*-:|")
+
+
+def _visible_match_text(line: str) -> str:
+    line = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"\1", line)
+    line = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", line)
+    line = re.sub(r"https?://\S+", "", line)
+    return _normalize_text(line)
+
+
+def _is_allowed_url(raw_url: str, source_domain: str) -> bool:
+    parsed = urlparse(raw_url)
+    if parsed.scheme and parsed.scheme not in {"http", "https"}:
+        return False
+    domain = (parsed.netloc or source_domain).lower().removeprefix("www.")
+    if not domain:
+        return True
+    allowed = {item.removeprefix("www.") for item in ALLOWED_DOMAINS}
+    return domain in allowed or domain == source_domain.removeprefix("www.")
+
+
+def _strip_disallowed_links(line: str, source_domain: str) -> str:
+    def replace_markdown(match: re.Match[str]) -> str:
+        label, raw_url = match.group(1), match.group(2)
+        return match.group(0) if _is_allowed_url(raw_url, source_domain) else label
+
+    line = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", replace_markdown, line)
+
+    def replace_bare(match: re.Match[str]) -> str:
+        raw_url = match.group(0)
+        return raw_url if _is_allowed_url(raw_url, source_domain) else ""
+
+    return re.sub(r"https?://[^\s)>\]]+", replace_bare, line).strip()
+
+
+def _line_has_spam(line: str) -> bool:
+    lower = _normalize_text(line)
+    return any(token in lower for token in SPAM_TOKENS)
+
+
+def _is_noise_line(line: str) -> bool:
+    stripped = line.strip()
+    if not stripped:
+        return True
+    plain = re.sub(r"^[#*\-\s>]+", "", stripped).strip()
+    if re.fullmatch(r"\[?[^\]]+\]?\([^)]+\)", plain) or re.fullmatch(r"https?://\S+", plain):
+        return True
+    if len(plain) < 12 and not re.search(r"\d|ielts|sat|act|gpa|học phí|chỉ tiêu|điểm", plain.lower()):
+        return True
+    if any(re.search(pattern, plain, flags=re.IGNORECASE) for pattern in MENU_PATTERNS):
+        return True
+    return False
+
+
+def _find_content_start(lines: list[str], expected_title: str, crawled_title: str) -> int:
+    candidates = [_normalize_text(expected_title), _normalize_text(crawled_title)]
+    candidates = [item for item in candidates if len(item) >= 12]
+    for heading_pattern in [r"^#\s+", r"^#{2,4}\s+"]:
+        for index, line in enumerate(lines):
+            if not re.match(heading_pattern, line.strip()):
+                continue
+            normalized = _visible_match_text(line)
+            if normalized and any(candidate and (candidate in normalized or normalized in candidate) for candidate in candidates):
+                return index
+    for index, line in enumerate(lines):
+        if line.lstrip().startswith(("*", "-")):
+            continue
+        normalized = _visible_match_text(line)
+        if normalized and any(candidate and (candidate in normalized or normalized in candidate) for candidate in candidates):
+            return index
+    for index, line in enumerate(lines):
+        if re.match(r"^#{1,3}\s+\S", line.strip()):
+            return index
+    return 0
+
+
+def sanitize_crawled_markdown(markdown: str, source_url: str, expected_title: str, crawled_title: str = "") -> str:
+    """Keep the main admission article body and reject contaminated crawl output."""
+
+    source_domain = urlparse(source_url).netloc.lower()
+    if not markdown or not markdown.strip():
+        raise ValueError(f"No crawl content extracted from {source_url}")
+
+    raw_lines = [re.sub(r"\s+", " ", line).strip() for line in markdown.splitlines()]
+    start = _find_content_start(raw_lines, expected_title, crawled_title)
+    raw_lines = raw_lines[start:]
+
+    cleaned: list[str] = []
+    seen: dict[str, int] = {}
+    for line in raw_lines:
+        if any(marker.lower() in line.lower() for marker in STOP_MARKERS):
+            break
+        line = _strip_disallowed_links(line, source_domain)
+        if _line_has_spam(line) or _is_noise_line(line):
+            continue
+        normalized = _normalize_text(line)
+        seen[normalized] = seen.get(normalized, 0) + 1
+        if seen[normalized] > 2:
+            continue
+        cleaned.append(line)
+
+    content = "\n\n".join(cleaned).strip()
+    normalized_content = _normalize_text(content)
+    expected_keywords = [token for token in re.split(r"\W+", _normalize_text(expected_title)) if len(token) >= 3]
+    domain_keywords = [
+        "tuyển sinh",
+        "admission",
+        "undergraduate",
+        "học phí",
+        "tuition",
+        "scholarship",
+        "học bổng",
+        "điểm chuẩn",
+        "ielts",
+        "chỉ tiêu",
+    ]
+    has_title_signal = _normalize_text(expected_title) in normalized_content or sum(
+        1 for token in expected_keywords if token in normalized_content
+    ) >= max(1, min(2, len(expected_keywords)))
+    has_domain_signal = any(keyword in normalized_content for keyword in domain_keywords)
+
+    if len(content) <= 500:
+        raise ValueError(f"Sanitized content too short from {source_url}")
+    if not (has_title_signal or has_domain_signal):
+        raise ValueError(f"Sanitized content does not match expected title for {source_url}")
+    if any(token in normalized_content for token in SPAM_TOKENS):
+        raise ValueError(f"Sanitized content still contains spam tokens from {source_url}")
+    return content
+
+
 def _html_to_markdown(html: str, url: str) -> tuple[str, str]:
     soup = BeautifulSoup(html, "html.parser")
-    for tag in soup(["script", "style", "noscript", "svg", "form", "footer", "nav"]):
+    for tag in soup(["script", "style", "noscript", "svg", "form", "footer", "nav", "aside", "header"]):
         tag.decompose()
     title = ""
     if soup.title and soup.title.string:
@@ -99,9 +280,16 @@ def _html_to_markdown(html: str, url: str) -> tuple[str, str]:
         h1 = soup.find("h1")
         title = h1.get_text(" ", strip=True) if h1 else url
 
-    main = soup.find("main") or soup.find("article") or soup.body or soup
+    main = (
+        soup.find("article")
+        or soup.find("main")
+        or soup.find(attrs={"role": "main"})
+        or soup.find(class_=re.compile(r"(content|article|post|entry|main)", re.I))
+        or soup.body
+        or soup
+    )
     lines: list[str] = []
-    for node in main.find_all(["h1", "h2", "h3", "p", "li", "td", "th"]):
+    for node in main.find_all(["h1", "h2", "h3", "h4", "p", "li", "td", "th", "caption"]):
         text = re.sub(r"\s+", " ", node.get_text(" ", strip=True)).strip()
         if len(text) < 3:
             continue
@@ -111,6 +299,8 @@ def _html_to_markdown(html: str, url: str) -> tuple[str, str]:
             lines.append(f"## {text}")
         elif node.name == "h3":
             lines.append(f"### {text}")
+        elif node.name == "h4":
+            lines.append(f"#### {text}")
         elif node.name == "li":
             lines.append(f"- {text}")
         else:
@@ -155,6 +345,7 @@ async def crawl_article(source: dict) -> dict:
     if crawled is None:
         crawled = _crawl_with_requests(url)
     title, markdown = crawled
+    markdown = sanitize_crawled_markdown(markdown, url, source.get("title", ""), title)
     return {
         "url": url,
         "title": source.get("title") or title,

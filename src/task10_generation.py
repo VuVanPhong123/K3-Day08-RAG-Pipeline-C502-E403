@@ -125,6 +125,26 @@ def _has_valid_citation(answer: str, chunks: list[dict]) -> bool:
     return bool(used) and all(label in labels for label in used)
 
 
+def _is_modern_gemini_model(model: str) -> bool:
+    model = model.lower()
+    return bool(re.search(r"gemini-(3\.[5-9]|[4-9]\.)", model))
+
+
+def _provider_error_message(provider: str, exc: Exception) -> str:
+    status = getattr(exc, "status_code", None) or getattr(exc, "code", None)
+    response = getattr(exc, "response", None)
+    if status is None and response is not None:
+        status = getattr(response, "status_code", None)
+    text = str(exc).lower()
+    if status == 400 or "400" in text:
+        return f"{provider} bad request; falling back locally"
+    if status == 429 or "429" in text or "quota" in text or "rate" in text:
+        return f"{provider} quota or rate limit reached; falling back locally"
+    if "api_key" in text or "api key" in text or "unauthorized" in text or "forbidden" in text:
+        return f"{provider} authentication unavailable; falling back locally"
+    return f"{provider} unavailable; falling back locally"
+
+
 def _generate_gemini(prompt: str) -> dict[str, str]:
     api_key = os.getenv("GEMINI_API_KEY", "")
     if not api_key:
@@ -133,16 +153,18 @@ def _generate_gemini(prompt: str) -> dict[str, str]:
     from google.genai import types
 
     client = genai.Client(api_key=api_key)
+    config_kwargs = {
+        "system_instruction": SYSTEM_PROMPT,
+        "max_output_tokens": 900,
+        "http_options": types.HttpOptions(timeout=30000),
+    }
+    if not _is_modern_gemini_model(GEMINI_MODEL):
+        config_kwargs["temperature"] = TEMPERATURE
+        config_kwargs["top_p"] = TOP_P
     response = client.models.generate_content(
         model=GEMINI_MODEL,
         contents=prompt,
-        config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_PROMPT,
-            temperature=TEMPERATURE,
-            top_p=TOP_P,
-            max_output_tokens=900,
-            http_options=types.HttpOptions(timeout=30000),
-        ),
+        config=types.GenerateContentConfig(**config_kwargs),
     )
     return {"answer": response.text or "", "provider": "gemini", "model": GEMINI_MODEL}
 
@@ -193,7 +215,8 @@ def generate_with_citation(
                         "model": result["model"],
                     }
             except Exception as exc:
-                print(f"WARNING: generation provider fallback: {exc}")
+                provider = "gemini" if generator is _generate_gemini else "openai"
+                print(f"WARNING: {_provider_error_message(provider, exc)}")
 
     answer = _local_extractive_answer(contextual_query, reordered)
     return {
